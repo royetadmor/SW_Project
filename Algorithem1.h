@@ -1,0 +1,8 @@
+//
+// Created by Roye on 12/08/2020.
+//
+
+#ifndef SW_PROJECT_ALGORITHEM1_H
+#define SW_PROJECT_ALGORITHEM1_H
+
+#endif //SW_PROJECT_ALGORITHEM1_H

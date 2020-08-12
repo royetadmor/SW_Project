@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/user/CLionProjects/SW_Project/Algorithem1.c">
+			<Option target="SW_project"/>
+		</Unit>
+		<Unit filename="/Users/user/CLionProjects/SW_Project/Algorithem1.h">
+			<Option target="SW_project"/>
+		</Unit>
 		<Unit filename="/Users/user/CLionProjects/SW_Project/cov.c">
 			<Option target="SW_project"/>
 		</Unit>

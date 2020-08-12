@@ -123,6 +123,33 @@ SW_project/fast:
 	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/build
 .PHONY : SW_project/fast
 
+Algorithem1.o: Algorithem1.c.o
+
+.PHONY : Algorithem1.o
+
+# target to build an object file
+Algorithem1.c.o:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/Algorithem1.c.o
+.PHONY : Algorithem1.c.o
+
+Algorithem1.i: Algorithem1.c.i
+
+.PHONY : Algorithem1.i
+
+# target to preprocess a source file
+Algorithem1.c.i:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/Algorithem1.c.i
+.PHONY : Algorithem1.c.i
+
+Algorithem1.s: Algorithem1.c.s
+
+.PHONY : Algorithem1.s
+
+# target to generate assembly for a file
+Algorithem1.c.s:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/Algorithem1.c.s
+.PHONY : Algorithem1.c.s
+
 cov.o: cov.c.o
 
 .PHONY : cov.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SW_project"
+	@echo "... Algorithem1.o"
+	@echo "... Algorithem1.i"
+	@echo "... Algorithem1.s"
 	@echo "... cov.o"
 	@echo "... cov.i"
 	@echo "... cov.s"
