@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include "spmat.h"
 #include "eigen.h"
-#define SIZE 3
+#define SIZE 5
 
 
 double* PowerIterationsWithSparse(double** matrix, double * init_vector, int size);
@@ -43,11 +43,12 @@ double* PowerIterationsWithSparse(double** matrix, double * init_vector, int siz
     {
         PowerIteration(A,init_vector,new_vector,size);
     }
-    printf("Eigenvector is: \n");
+    printf("Normalized eigenvector is: \n");
     for (int j = 0; j < SIZE; ++j) {
         printf("%f ",init_vector[j]);
     }
     printf("\ndone");
+    A->free(A);
     return init_vector;
 }
 

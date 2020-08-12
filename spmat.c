@@ -47,7 +47,6 @@ void add_row_list(spmat* A, double* row, int i)
             head->next->val = row[j];
             head->next->col_index = j;
             head->next->next = NULL;
-            printf("added %f\n", row[j]);
         }
     }
 }
@@ -56,7 +55,6 @@ void list_free(spmat* A)
     for (int i = 0; i < A->n; ++i) {
         list* curr = ((list**)A->private)[i];
         free(curr);
-        printf("freed row %d\n", i);
     }
     free(A->private);
     free(A);
@@ -64,7 +62,6 @@ void list_free(spmat* A)
 
 void mult_list (spmat *A, double *v, double *result)
 {
-    printf("%f %f %f\n",v[0],v[1],v[2]);
     list** arr = A->private;
     for (int i = 0; i < A->n; ++i) {
         double sum = 0;
@@ -82,8 +79,6 @@ void mult_list (spmat *A, double *v, double *result)
 
         }
         result[i] = sum;
-        printf("%f - float\n",sum);
-
     }
 
 }
