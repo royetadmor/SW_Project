@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/user/CLionProjects/temp/SW_Project
+CMAKE_SOURCE_DIR = /Users/user/CLionProjects/SW_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/user/CLionProjects/SW_Project/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SW_project.dir/depend.make
@@ -59,48 +59,62 @@ include CMakeFiles/SW_project.dir/flags.make
 
 CMakeFiles/SW_project.dir/main.c.o: CMakeFiles/SW_project.dir/flags.make
 CMakeFiles/SW_project.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/temp/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SW_project.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/main.c.o   -c /Users/user/CLionProjects/temp/SW_Project/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SW_project.dir/main.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/main.c.o   -c /Users/user/CLionProjects/SW_Project/main.c
 
 CMakeFiles/SW_project.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SW_project.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/temp/SW_Project/main.c > CMakeFiles/SW_project.dir/main.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/SW_Project/main.c > CMakeFiles/SW_project.dir/main.c.i
 
 CMakeFiles/SW_project.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SW_project.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/temp/SW_Project/main.c -o CMakeFiles/SW_project.dir/main.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/SW_Project/main.c -o CMakeFiles/SW_project.dir/main.c.s
 
 CMakeFiles/SW_project.dir/cov.c.o: CMakeFiles/SW_project.dir/flags.make
 CMakeFiles/SW_project.dir/cov.c.o: ../cov.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/temp/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SW_project.dir/cov.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/cov.c.o   -c /Users/user/CLionProjects/temp/SW_Project/cov.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SW_project.dir/cov.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/cov.c.o   -c /Users/user/CLionProjects/SW_Project/cov.c
 
 CMakeFiles/SW_project.dir/cov.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SW_project.dir/cov.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/temp/SW_Project/cov.c > CMakeFiles/SW_project.dir/cov.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/SW_Project/cov.c > CMakeFiles/SW_project.dir/cov.c.i
 
 CMakeFiles/SW_project.dir/cov.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SW_project.dir/cov.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/temp/SW_Project/cov.c -o CMakeFiles/SW_project.dir/cov.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/SW_Project/cov.c -o CMakeFiles/SW_project.dir/cov.c.s
 
 CMakeFiles/SW_project.dir/eigen.c.o: CMakeFiles/SW_project.dir/flags.make
 CMakeFiles/SW_project.dir/eigen.c.o: ../eigen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/temp/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SW_project.dir/eigen.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/eigen.c.o   -c /Users/user/CLionProjects/temp/SW_Project/eigen.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SW_project.dir/eigen.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/eigen.c.o   -c /Users/user/CLionProjects/SW_Project/eigen.c
 
 CMakeFiles/SW_project.dir/eigen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SW_project.dir/eigen.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/temp/SW_Project/eigen.c > CMakeFiles/SW_project.dir/eigen.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/SW_Project/eigen.c > CMakeFiles/SW_project.dir/eigen.c.i
 
 CMakeFiles/SW_project.dir/eigen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SW_project.dir/eigen.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/temp/SW_Project/eigen.c -o CMakeFiles/SW_project.dir/eigen.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/SW_Project/eigen.c -o CMakeFiles/SW_project.dir/eigen.c.s
+
+CMakeFiles/SW_project.dir/spmat.c.o: CMakeFiles/SW_project.dir/flags.make
+CMakeFiles/SW_project.dir/spmat.c.o: ../spmat.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SW_project.dir/spmat.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/spmat.c.o   -c /Users/user/CLionProjects/SW_Project/spmat.c
+
+CMakeFiles/SW_project.dir/spmat.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SW_project.dir/spmat.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/SW_Project/spmat.c > CMakeFiles/SW_project.dir/spmat.c.i
+
+CMakeFiles/SW_project.dir/spmat.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SW_project.dir/spmat.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/SW_Project/spmat.c -o CMakeFiles/SW_project.dir/spmat.c.s
 
 # Object files for target SW_project
 SW_project_OBJECTS = \
 "CMakeFiles/SW_project.dir/main.c.o" \
 "CMakeFiles/SW_project.dir/cov.c.o" \
-"CMakeFiles/SW_project.dir/eigen.c.o"
+"CMakeFiles/SW_project.dir/eigen.c.o" \
+"CMakeFiles/SW_project.dir/spmat.c.o"
 
 # External object files for target SW_project
 SW_project_EXTERNAL_OBJECTS =
@@ -108,9 +122,10 @@ SW_project_EXTERNAL_OBJECTS =
 SW_project: CMakeFiles/SW_project.dir/main.c.o
 SW_project: CMakeFiles/SW_project.dir/cov.c.o
 SW_project: CMakeFiles/SW_project.dir/eigen.c.o
+SW_project: CMakeFiles/SW_project.dir/spmat.c.o
 SW_project: CMakeFiles/SW_project.dir/build.make
 SW_project: CMakeFiles/SW_project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/user/CLionProjects/temp/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable SW_project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable SW_project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SW_project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +138,6 @@ CMakeFiles/SW_project.dir/clean:
 .PHONY : CMakeFiles/SW_project.dir/clean
 
 CMakeFiles/SW_project.dir/depend:
-	cd /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/user/CLionProjects/temp/SW_Project /Users/user/CLionProjects/temp/SW_Project /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug/CMakeFiles/SW_project.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/user/CLionProjects/SW_Project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/user/CLionProjects/SW_Project /Users/user/CLionProjects/SW_Project /Users/user/CLionProjects/SW_Project/cmake-build-debug /Users/user/CLionProjects/SW_Project/cmake-build-debug /Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles/SW_project.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SW_project.dir/depend
 

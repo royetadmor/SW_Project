@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/user/CLionProjects/temp/SW_Project
+CMAKE_SOURCE_DIR = /Users/user/CLionProjects/SW_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/user/CLionProjects/SW_Project/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug/CMakeFiles /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles /Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/temp/SW_Project/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -204,6 +204,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/main.c.s
 .PHONY : main.c.s
 
+spmat.o: spmat.c.o
+
+.PHONY : spmat.o
+
+# target to build an object file
+spmat.c.o:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/spmat.c.o
+.PHONY : spmat.c.o
+
+spmat.i: spmat.c.i
+
+.PHONY : spmat.i
+
+# target to preprocess a source file
+spmat.c.i:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/spmat.c.i
+.PHONY : spmat.c.i
+
+spmat.s: spmat.c.s
+
+.PHONY : spmat.s
+
+# target to generate assembly for a file
+spmat.c.s:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/spmat.c.s
+.PHONY : spmat.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +249,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... spmat.o"
+	@echo "... spmat.i"
+	@echo "... spmat.s"
 .PHONY : help
 
 
