@@ -71,91 +71,91 @@ void printMatrixToFile(int numberOfRows,int numberOfColumns,double **matrix, FIL
 
 
 
-int main(int argc, char* argv[]) {
-	/*clock_t start = clock();*/
-
-
-	/* the 1st argument (input filename) with argv[1],
-	the 2nd argument (output filename) with argv[2]. */
-
-
-
-
-	/*-----------------------------------declarations-----------------------------------*/
-	char *inFile, *outFile;
-	FILE *file ;
-	int numberOfColumns = 0; /* 1st argument in the file */
-	int numberOfRows = 0; /* 2st argument in the file */
-	double **matrix ,**covMatrix;
-	int ass = 0;
-	int i, j;
-	/*clock_t end;
-	double delta;*/
-
-
-	/*-----------------------------------code-----------------------------------*/
-	assert(argc == 0 || argc != 0);
-
-	assert(argv[1] != NULL);
-	inFile = argv[1];
-	assert(argv[2] != NULL);
-	outFile = argv[2];
-
-
-	file = fopen(inFile, "r");
-	assert(file!=NULL);
-	ass = fread(&numberOfColumns, sizeof(int), 1, file);
-	assert(ass == 1);
-	ass = fread(&numberOfRows, sizeof(int), 1, file);
-	assert(ass == 1);
-
-
-	matrix = (double **)calloc(numberOfRows , sizeof(double*));
-	for(i = 0; i < numberOfRows; i++) {
-		matrix[i] = (double *)calloc(numberOfColumns , sizeof(double));
-	}
-
-	for (i = 0 ; i < numberOfRows; i ++){
-			long double sumOfRow = 0 ;
-			for(j = 0 ; j < numberOfColumns; j++){
-				ass = fread(&(matrix[i][j]), sizeof(double), 1, file);
-				assert(ass == 1);
-				sumOfRow += matrix[i][j];
-			}
-			sumOfRow = sumOfRow/numberOfColumns;
-			for(j = 0 ; j < numberOfColumns; j++){
-				matrix[i][j] -= sumOfRow;
-			}
-	}
-
-	fclose(file);
-
-	/*printf("The matrix after substruction of the mean from each line:\n");
-	printMatrix(matrix,numberOfRows,numberOfColumns);*/
-
-
-	covMatrix = (double **)calloc(numberOfRows , sizeof(double*));
-	for(i = 0; i < numberOfRows; i++) {
-		covMatrix[i] = (double *)calloc(numberOfRows , sizeof(double));
-	}
-	createCovMatrix(covMatrix ,matrix, numberOfRows, numberOfColumns);
-
-	/*printf("The covariance matrix:\n");
-	printMatrix(covMatrix,numberOfRows,numberOfRows);*/
-
-
-
-	file = fopen(outFile, "w");
-	assert(file!=NULL);
-	printMatrixToFile(numberOfRows,numberOfRows,covMatrix,file);
-	/*end = clock();*/
-	/*delta = ((double)(end-start) / CLOCKS_PER_SEC);*/
-	/*printf("the delta: %15.8f\n",delta);*/
-	free(matrix);
-	free(covMatrix);
-	return EXIT_SUCCESS;
-
-}
+//int main(int argc, char* argv[]) {
+//	/*clock_t start = clock();*/
+//
+//
+//	/* the 1st argument (input filename) with argv[1],
+//	the 2nd argument (output filename) with argv[2]. */
+//
+//
+//
+//
+//	/*-----------------------------------declarations-----------------------------------*/
+//	char *inFile, *outFile;
+//	FILE *file ;
+//	int numberOfColumns = 0; /* 1st argument in the file */
+//	int numberOfRows = 0; /* 2st argument in the file */
+//	double **matrix ,**covMatrix;
+//	int ass = 0;
+//	int i, j;
+//	/*clock_t end;
+//	double delta;*/
+//
+//
+//	/*-----------------------------------code-----------------------------------*/
+//	assert(argc == 0 || argc != 0);
+//
+//	assert(argv[1] != NULL);
+//	inFile = argv[1];
+//	assert(argv[2] != NULL);
+//	outFile = argv[2];
+//
+//
+//	file = fopen(inFile, "r");
+//	assert(file!=NULL);
+//	ass = fread(&numberOfColumns, sizeof(int), 1, file);
+//	assert(ass == 1);
+//	ass = fread(&numberOfRows, sizeof(int), 1, file);
+//	assert(ass == 1);
+//
+//
+//	matrix = (double **)calloc(numberOfRows , sizeof(double*));
+//	for(i = 0; i < numberOfRows; i++) {
+//		matrix[i] = (double *)calloc(numberOfColumns , sizeof(double));
+//	}
+//
+//	for (i = 0 ; i < numberOfRows; i ++){
+//			long double sumOfRow = 0 ;
+//			for(j = 0 ; j < numberOfColumns; j++){
+//				ass = fread(&(matrix[i][j]), sizeof(double), 1, file);
+//				assert(ass == 1);
+//				sumOfRow += matrix[i][j];
+//			}
+//			sumOfRow = sumOfRow/numberOfColumns;
+//			for(j = 0 ; j < numberOfColumns; j++){
+//				matrix[i][j] -= sumOfRow;
+//			}
+//	}
+//
+//	fclose(file);
+//
+//	/*printf("The matrix after substruction of the mean from each line:\n");
+//	printMatrix(matrix,numberOfRows,numberOfColumns);*/
+//
+//
+//	covMatrix = (double **)calloc(numberOfRows , sizeof(double*));
+//	for(i = 0; i < numberOfRows; i++) {
+//		covMatrix[i] = (double *)calloc(numberOfRows , sizeof(double));
+//	}
+//	createCovMatrix(covMatrix ,matrix, numberOfRows, numberOfColumns);
+//
+//	/*printf("The covariance matrix:\n");
+//	printMatrix(covMatrix,numberOfRows,numberOfRows);*/
+//
+//
+//
+//	file = fopen(outFile, "w");
+//	assert(file!=NULL);
+//	printMatrixToFile(numberOfRows,numberOfRows,covMatrix,file);
+//	/*end = clock();*/
+//	/*delta = ((double)(end-start) / CLOCKS_PER_SEC);*/
+//	/*printf("the delta: %15.8f\n",delta);*/
+//	free(matrix);
+//	free(covMatrix);
+//	return EXIT_SUCCESS;
+//
+//}
 
 
 

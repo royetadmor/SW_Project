@@ -204,32 +204,32 @@ eigen.c.s:
 	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/eigen.c.s
 .PHONY : eigen.c.s
 
-main.o: main.c.o
+sparse.o: sparse.c.o
 
-.PHONY : main.o
+.PHONY : sparse.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/main.c.o
-.PHONY : main.c.o
+sparse.c.o:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/sparse.c.o
+.PHONY : sparse.c.o
 
-main.i: main.c.i
+sparse.i: sparse.c.i
 
-.PHONY : main.i
+.PHONY : sparse.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/main.c.i
-.PHONY : main.c.i
+sparse.c.i:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/sparse.c.i
+.PHONY : sparse.c.i
 
-main.s: main.c.s
+sparse.s: sparse.c.s
 
-.PHONY : main.s
+.PHONY : sparse.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/main.c.s
-.PHONY : main.c.s
+sparse.c.s:
+	$(MAKE) -f CMakeFiles/SW_project.dir/build.make CMakeFiles/SW_project.dir/sparse.c.s
+.PHONY : sparse.c.s
 
 spmat.o: spmat.c.o
 
@@ -276,9 +276,9 @@ help:
 	@echo "... eigen.o"
 	@echo "... eigen.i"
 	@echo "... eigen.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... sparse.o"
+	@echo "... sparse.i"
+	@echo "... sparse.s"
 	@echo "... spmat.o"
 	@echo "... spmat.i"
 	@echo "... spmat.s"

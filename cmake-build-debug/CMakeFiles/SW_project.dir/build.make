@@ -57,22 +57,9 @@ include CMakeFiles/SW_project.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/SW_project.dir/flags.make
 
-CMakeFiles/SW_project.dir/main.c.o: CMakeFiles/SW_project.dir/flags.make
-CMakeFiles/SW_project.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SW_project.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/main.c.o   -c /Users/user/CLionProjects/SW_Project/main.c
-
-CMakeFiles/SW_project.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SW_project.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/SW_Project/main.c > CMakeFiles/SW_project.dir/main.c.i
-
-CMakeFiles/SW_project.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SW_project.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/SW_Project/main.c -o CMakeFiles/SW_project.dir/main.c.s
-
 CMakeFiles/SW_project.dir/cov.c.o: CMakeFiles/SW_project.dir/flags.make
 CMakeFiles/SW_project.dir/cov.c.o: ../cov.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SW_project.dir/cov.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/SW_project.dir/cov.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/cov.c.o   -c /Users/user/CLionProjects/SW_Project/cov.c
 
 CMakeFiles/SW_project.dir/cov.c.i: cmake_force
@@ -85,7 +72,7 @@ CMakeFiles/SW_project.dir/cov.c.s: cmake_force
 
 CMakeFiles/SW_project.dir/eigen.c.o: CMakeFiles/SW_project.dir/flags.make
 CMakeFiles/SW_project.dir/eigen.c.o: ../eigen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SW_project.dir/eigen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/SW_project.dir/eigen.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/eigen.c.o   -c /Users/user/CLionProjects/SW_Project/eigen.c
 
 CMakeFiles/SW_project.dir/eigen.c.i: cmake_force
@@ -98,7 +85,7 @@ CMakeFiles/SW_project.dir/eigen.c.s: cmake_force
 
 CMakeFiles/SW_project.dir/spmat.c.o: CMakeFiles/SW_project.dir/flags.make
 CMakeFiles/SW_project.dir/spmat.c.o: ../spmat.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SW_project.dir/spmat.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/SW_project.dir/spmat.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/spmat.c.o   -c /Users/user/CLionProjects/SW_Project/spmat.c
 
 CMakeFiles/SW_project.dir/spmat.c.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/SW_project.dir/spmat.c.s: cmake_force
 
 CMakeFiles/SW_project.dir/Algorithem1.c.o: CMakeFiles/SW_project.dir/flags.make
 CMakeFiles/SW_project.dir/Algorithem1.c.o: ../Algorithem1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SW_project.dir/Algorithem1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/SW_project.dir/Algorithem1.c.o"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/Algorithem1.c.o   -c /Users/user/CLionProjects/SW_Project/Algorithem1.c
 
 CMakeFiles/SW_project.dir/Algorithem1.c.i: cmake_force
@@ -122,22 +109,35 @@ CMakeFiles/SW_project.dir/Algorithem1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SW_project.dir/Algorithem1.c.s"
 	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/SW_Project/Algorithem1.c -o CMakeFiles/SW_project.dir/Algorithem1.c.s
 
+CMakeFiles/SW_project.dir/sparse.c.o: CMakeFiles/SW_project.dir/flags.make
+CMakeFiles/SW_project.dir/sparse.c.o: ../sparse.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SW_project.dir/sparse.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SW_project.dir/sparse.c.o   -c /Users/user/CLionProjects/SW_Project/sparse.c
+
+CMakeFiles/SW_project.dir/sparse.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SW_project.dir/sparse.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/user/CLionProjects/SW_Project/sparse.c > CMakeFiles/SW_project.dir/sparse.c.i
+
+CMakeFiles/SW_project.dir/sparse.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SW_project.dir/sparse.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/user/CLionProjects/SW_Project/sparse.c -o CMakeFiles/SW_project.dir/sparse.c.s
+
 # Object files for target SW_project
 SW_project_OBJECTS = \
-"CMakeFiles/SW_project.dir/main.c.o" \
 "CMakeFiles/SW_project.dir/cov.c.o" \
 "CMakeFiles/SW_project.dir/eigen.c.o" \
 "CMakeFiles/SW_project.dir/spmat.c.o" \
-"CMakeFiles/SW_project.dir/Algorithem1.c.o"
+"CMakeFiles/SW_project.dir/Algorithem1.c.o" \
+"CMakeFiles/SW_project.dir/sparse.c.o"
 
 # External object files for target SW_project
 SW_project_EXTERNAL_OBJECTS =
 
-SW_project: CMakeFiles/SW_project.dir/main.c.o
 SW_project: CMakeFiles/SW_project.dir/cov.c.o
 SW_project: CMakeFiles/SW_project.dir/eigen.c.o
 SW_project: CMakeFiles/SW_project.dir/spmat.c.o
 SW_project: CMakeFiles/SW_project.dir/Algorithem1.c.o
+SW_project: CMakeFiles/SW_project.dir/sparse.c.o
 SW_project: CMakeFiles/SW_project.dir/build.make
 SW_project: CMakeFiles/SW_project.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable SW_project"

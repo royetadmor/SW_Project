@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/user/CLionProjects/SW_Project/eigen.h
+stdio.h
+-
+stdlib.h
+-
+
+/Users/user/CLionProjects/SW_Project/sparse.c
+stdio.h
+-
+stdlib.h
+-
+spmat.h
+/Users/user/CLionProjects/SW_Project/spmat.h
+eigen.h
+/Users/user/CLionProjects/SW_Project/eigen.h
+
+/Users/user/CLionProjects/SW_Project/spmat.c
+spmat.h
+/Users/user/CLionProjects/SW_Project/spmat.h
+stdio.h
+-
+stdlib.h
+-
+
+/Users/user/CLionProjects/SW_Project/spmat.h
+

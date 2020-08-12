@@ -96,7 +96,7 @@
 		<Unit filename="/Users/user/CLionProjects/SW_Project/eigen.h">
 			<Option target="SW_project"/>
 		</Unit>
-		<Unit filename="/Users/user/CLionProjects/SW_Project/main.c">
+		<Unit filename="/Users/user/CLionProjects/SW_Project/sparse.c">
 			<Option target="SW_project"/>
 		</Unit>
 		<Unit filename="/Users/user/CLionProjects/SW_Project/spmat.c">

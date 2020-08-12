@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/user/CLionProjects/SW_Project/Algorithem1.c" "/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles/SW_project.dir/Algorithem1.c.o"
   "/Users/user/CLionProjects/SW_Project/cov.c" "/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles/SW_project.dir/cov.c.o"
   "/Users/user/CLionProjects/SW_Project/eigen.c" "/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles/SW_project.dir/eigen.c.o"
-  "/Users/user/CLionProjects/SW_Project/main.c" "/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles/SW_project.dir/main.c.o"
+  "/Users/user/CLionProjects/SW_Project/sparse.c" "/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles/SW_project.dir/sparse.c.o"
   "/Users/user/CLionProjects/SW_Project/spmat.c" "/Users/user/CLionProjects/SW_Project/cmake-build-debug/CMakeFiles/SW_project.dir/spmat.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

@@ -67,7 +67,7 @@ void mult_list (spmat *A, double *v, double *result)
     printf("%f %f %f\n",v[0],v[1],v[2]);
     list** arr = A->private;
     for (int i = 0; i < A->n; ++i) {
-        int sum = 0;
+        double sum = 0;
         for (int row = 0; row < A->n; ++row) {
             list* curr = arr[row];
             while (curr != NULL && i != curr->col_index)
@@ -82,7 +82,8 @@ void mult_list (spmat *A, double *v, double *result)
 
         }
         result[i] = sum;
-        printf("%d\n",sum);
+        printf("%f - float\n",sum);
+
     }
 
 }

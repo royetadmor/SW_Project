@@ -2,7 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/SW_project.dir/Algorithem1.c.o"
   "CMakeFiles/SW_project.dir/cov.c.o"
   "CMakeFiles/SW_project.dir/eigen.c.o"
-  "CMakeFiles/SW_project.dir/main.c.o"
+  "CMakeFiles/SW_project.dir/sparse.c.o"
   "CMakeFiles/SW_project.dir/spmat.c.o"
   "SW_project"
   "SW_project.pdb"
