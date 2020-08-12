@@ -59,7 +59,6 @@ void list_free(spmat* A)
     free(A->private);
     free(A);
 }
-
 void mult_list (spmat *A, double *v, double *result)
 {
     list** arr = A->private;

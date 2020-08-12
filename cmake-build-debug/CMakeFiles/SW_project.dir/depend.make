@@ -10,6 +10,7 @@ CMakeFiles/SW_project.dir/eigen.c.o: ../eigen.c
 
 CMakeFiles/SW_project.dir/sparse.c.o: ../eigen.h
 CMakeFiles/SW_project.dir/sparse.c.o: ../sparse.c
+CMakeFiles/SW_project.dir/sparse.c.o: ../sparse.h
 CMakeFiles/SW_project.dir/sparse.c.o: ../spmat.h
 
 CMakeFiles/SW_project.dir/spmat.c.o: ../spmat.c

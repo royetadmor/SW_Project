@@ -6,11 +6,10 @@
 #include <stdlib.h>
 #include "spmat.h"
 #include "eigen.h"
-#define SIZE 5
+#include "sparse.h"
+#define SIZE 2
 
 
-double* PowerIterationsWithSparse(double** matrix, double * init_vector, int size);
-void PowerIteration(spmat* A, double* vector, double* new_vector, int size);
 int main()
 {
     double ** arr = (double**)malloc(SIZE*sizeof(double*));
@@ -51,7 +50,6 @@ double* PowerIterationsWithSparse(double** matrix, double * init_vector, int siz
     A->free(A);
     return init_vector;
 }
-
 void PowerIteration(spmat* A, double* vector, double* new_vector, int size)
 {
     A->mult(A,vector,new_vector);

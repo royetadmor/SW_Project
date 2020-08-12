@@ -99,6 +99,9 @@
 		<Unit filename="/Users/user/CLionProjects/SW_Project/sparse.c">
 			<Option target="SW_project"/>
 		</Unit>
+		<Unit filename="/Users/user/CLionProjects/SW_Project/sparse.h">
+			<Option target="SW_project"/>
+		</Unit>
 		<Unit filename="/Users/user/CLionProjects/SW_Project/spmat.c">
 			<Option target="SW_project"/>
 		</Unit>
