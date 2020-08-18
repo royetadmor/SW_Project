@@ -63,6 +63,7 @@ division* Algorithem1(double** modularity_matrix,int length)
             ++temp_length2;
         }
     }
+    free(s_vector);
     return division1;
 
 }
