@@ -28,7 +28,7 @@ double Calculate1norm(double** matrix,int length);
 void CalculateNewMatrix(double** matrix, int norm ,int length);
 
 /*
- * Calculates the leading eigenpair
+ * Calculates the leading eigenpair using sparse impl.
  * NOTE: since we are required for computing the leading eigenpair, we are doing the following:
  *  - init_vector will contain the leading eigenvctor after the function was called.
  *  - The eigenvalue is the return value of the function.

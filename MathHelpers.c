@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <float.h>
-
+#include "sparse.h"
 
 
 
@@ -29,10 +29,7 @@ double CalculateLeadingEigenpair(double** matrix,double* init_vector, int length
     double norm1 = Calculate1norm(matrix,length);
     double* new_vector = (double*)calloc(length, sizeof(double));
     CalculateNewMatrix(matrix,norm1,length);
-    while (hasEpsilonDifference(init_vector,new_vector,length) == 0)
-    {
-        iterate(matrix,init_vector,new_vector,length);
-    }
+    PowerIterationsWithSparse(matrix,init_vector,length);
     free(new_vector);
     double eigen_val = CalculateEigenvalue(matrix,init_vector,length);
     eigen_val = eigen_val - norm1;
