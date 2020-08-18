@@ -10,5 +10,6 @@ void normalizeVector(int length, double *vector);
 double MultiplyVectorAndVector(double* vector1, double* vector2, int length);
 void printMatrix(double **matrix, int numberOfRows, int numberOfColumns);
 void printVector(int length, double *vector);
+double* generateRandomVector(int length);
 
 #endif //SW_PROJECT_MATRIXANDVECTOROPS_H

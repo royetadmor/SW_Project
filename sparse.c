@@ -53,20 +53,22 @@
 double* PowerIterationsWithSparse(double** matrix, double * init_vector, int size)
 {
     int iter = 0;
+    int i , j;
+    double* new_vector;
     spmat* A = spmat_allocate_list(size);
-    for (int i = 0; i < size; ++i) {
+    for (i = 0; i < size; ++i) {
         A->add_row(A,matrix[i],i);
     }
-    double* new_vector = (double*)malloc(size*sizeof(double));
+    new_vector = (double*)malloc(size*sizeof(double));
     printVector(size,init_vector);
     while(hasEpsilonDifference(init_vector,new_vector,size) == 0)
     {
         PowerIteration(A,init_vector,new_vector,size);
         iter += 2;
     }
-    printf("Normalized eigenvector is: \n");
     printf("Iter: %d\n",iter);
-    for (int j = 0; j < size; ++j) {
+    printf("Normalized eigenvector is: \n");
+    for (j = 0; j < size; ++j) {
         printf("%f ",init_vector[j]);
     }
     printf("\ndone");

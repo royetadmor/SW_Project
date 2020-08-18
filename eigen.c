@@ -59,17 +59,6 @@ void printVectorToFile(int length,double *vector, FILE *file){
 }
 
 
-
-double* generateRandomVector(int length){
-	int i;
-	double* vectorToReturn = (double*)malloc(sizeof(double)*length);
-	srand(time(NULL));
-	for(i = 0 ; i < length; i++){
-		vectorToReturn[i] = rand();
-	}
-	return vectorToReturn;
-}
-
 /* the function return 1 if the difference between each corresponding pair of values is less then Epsilon */
 int hasEpsilonDifference(double* vector, double* oldVector, int length){
 	int i;
