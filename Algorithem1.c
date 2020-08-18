@@ -4,7 +4,8 @@
 
 #include "Algorithem1.h"
 
-void ReadInputMat()
+
+int main(int argc, char* argv[])
 {
 
 }
