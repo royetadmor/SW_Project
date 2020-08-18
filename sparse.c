@@ -49,13 +49,13 @@
  * Input: Matrix, initial vector to start calculation with and matrix size
  * Output: Dominant normalized eigenvector, meaning eigenvector with biggest absolute eigenvalue
  */
-double* PowerIterationsWithSparse(spmat *matrix, double * init_vector, int size)
+double* PowerIterationsWithSparse(double** matrix, double * init_vector, int size)
 {
     int iter = 0;
-    spmat* A = matrix;
-//    for (int i = 0; i < size; ++i) {
-//        A->add_row(A,matrix[i],i);
-//    }
+    spmat* A = spmat_allocate_list(size);
+    for (int i = 0; i < size; ++i) {
+        A->add_row(A,matrix[i],i);
+    }
     double* new_vector = (double*)malloc(size*sizeof(double));
     printVector(size,init_vector);
     while(hasEpsilonDifference(init_vector,new_vector,size) == 0)
