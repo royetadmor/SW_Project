@@ -12,21 +12,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <time.h>
-
-
-
-/*
-void printMatrix(double **matrix, int numberOfRows, int numberOfColumns){
-	int i ,j;
-	for (i = 0 ; i < numberOfRows; i ++){
-		for(j = 0 ; j < numberOfColumns; j++){
-			printf("%10.1f ",*(*(matrix + i)+j) );
-		}
-		printf("\n");
-	}
-
-}*/
-
+#include "MatrixAndVectorOps.h"
 
 
 void createCovMatrix(double **covMatrix ,double **matrix, int numberOfRows, int numberOfColumns){

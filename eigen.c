@@ -13,39 +13,39 @@
 #include <assert.h>
 #include <math.h>
 #include <time.h>
+#include "MatrixAndVectorOps.h"
 
 
+//void printMatrix(double **matrix, int numberOfRows, int numberOfColumns){
+//	int i ,j;
+//	for (i = 0 ; i < numberOfRows; i ++){
+//		for(j = 0 ; j < numberOfColumns; j++){
+//			printf("%10.1f ",*(*(matrix + i)+j) );
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//void printVector(int length, double *vector){
+//	int i;
+//	for(i = 0; i < length; i++){
+//		printf("%15.10f ",vector[i]);
+//	}
+//	printf("\n");
+//}
 
-void printMatrix(double **matrix, int numberOfRows, int numberOfColumns){
-	int i ,j;
-	for (i = 0 ; i < numberOfRows; i ++){
-		for(j = 0 ; j < numberOfColumns; j++){
-			printf("%10.1f ",*(*(matrix + i)+j) );
-		}
-		printf("\n");
-	}
-}
 
-void printVector(int length, double *vector){
-	int i;
-	for(i = 0; i < length; i++){
-		printf("%15.10f ",vector[i]);
-	}
-	printf("\n");
-}
-
-
-void normalizeVector(int length, double *vector){
-	int i;
-	long double	sum = 0;
-	for(i = 0; i < length; i++){
-		sum += vector[i]*vector[i];
-	}
-	sum = sqrt(sum);
-	for(i = 0; i < length; i++){
-		vector[i] = vector[i]/sum;
-	}
-}
+//void normalizeVector(int length, double *vector){
+//	int i;
+//	long double	sum = 0;
+//	for(i = 0; i < length; i++){
+//		sum += vector[i]*vector[i];
+//	}
+//	sum = sqrt(sum);
+//	for(i = 0; i < length; i++){
+//		vector[i] = vector[i]/sum;
+//	}
+//}
 
 
 void printVectorToFile(int length,double *vector, FILE *file){
@@ -69,21 +69,6 @@ double* generateRandomVector(int length){
 	}
 	return vectorToReturn;
 }
-
-
-double* multiplyMatrixAndVector(double** matrix, double* vector, double* newVector, int length){
-	int i,j;
-	int sum;
-	for(i = 0 ; i < length; i++){
-		sum = 0;
-		for(j = 0 ; j < length; j++){
-			sum += (matrix[i][j]*vector[j]);
-		}
-		newVector[i] = sum;
-	}
-	return newVector;
-}
-
 
 /* the function return 1 if the difference between each corresponding pair of values is less then Epsilon */
 int hasEpsilonDifference(double* vector, double* oldVector, int length){

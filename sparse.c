@@ -8,6 +8,7 @@
 #include "eigen.h"
 #include "sparse.h"
 #include <assert.h>
+#include "MatrixAndVectorOps.h"
 /*
  * Power iterations with sparse matrix implementation
  */
