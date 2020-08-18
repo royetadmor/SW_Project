@@ -5,6 +5,7 @@
 #include "MatrixAndVectorOps.h"
 #include <math.h>
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
 
 double* multiplyMatrixAndVector(double** matrix, double* vector, double* newVector, int length){
@@ -53,4 +54,13 @@ void printVector(int length, double *vector){
         printf("%15.10f ",vector[i]);
     }
     printf("\n");
+}
+double* generateRandomVector(int length){
+    int i;
+    double* vectorToReturn = (double*)malloc(sizeof(double)*length);
+    srand(time(NULL));
+    for(i = 0 ; i < length; i++){
+        vectorToReturn[i] = rand();
+    }
+    return vectorToReturn;
 }

@@ -10,7 +10,7 @@
  */
 
 /*
- * Calculates the eigenvalue of a given vector based on formula.\
+ * Calculates the eigenvalue of a given vector based on formula.
  * Eigenvalue returns as a double
  */
 double CalculateEigenvalue(double** matrix, double* vector, int length);
