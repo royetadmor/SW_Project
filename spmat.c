@@ -8,7 +8,7 @@
 void add_row_list(spmat* A, double* row, int i);
 void list_free(spmat* A);
 void mult_list (spmat *A, double *v, double *result);
-void printmat(spmat* A);
+//void printmat(spmat* A);
 
 typedef struct list{
     double val;
@@ -18,7 +18,7 @@ typedef struct list{
 
 spmat* spmat_allocate_list(int n)
 {
-    list** arr = (list**)malloc(n* sizeof(list));
+    list** arr = (list**)malloc(n* sizeof(list*));
     for (int i = 0; i < n; ++i) {
         arr[i] = (list*)malloc(sizeof(list));
         arr[i]->val = 0;
@@ -81,18 +81,3 @@ void mult_list (spmat *A, double *v, double *result)
     }
 
 }
-
-//void printmat(spmat* A)
-//{
-//    for (int i = 0; i < A->n; ++i) {
-//        list* node = ((list**)A->private)+i;
-//        while (node != NULL)
-//        {
-//            printf("%d ",node->val);
-//            node = node->next;
-//        }
-//        printf("\n");
-//
-//    }
-//}
-//
