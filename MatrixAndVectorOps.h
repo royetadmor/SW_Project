@@ -1,6 +1,6 @@
-//
-// Created by Roye on 18/08/2020.
-//
+/*
+* Created by Roye on 18/08/2020.
+*/
 
 #ifndef SW_PROJECT_MATRIXANDVECTOROPS_H
 #define SW_PROJECT_MATRIXANDVECTOROPS_H
@@ -12,4 +12,4 @@ void printMatrix(double **matrix, int numberOfRows, int numberOfColumns);
 void printVector(int length, double *vector);
 double* generateRandomVector(int length);
 
-#endif //SW_PROJECT_MATRIXANDVECTOROPS_H
+#endif /*SW_PROJECT_MATRIXANDVECTOROPS_H*/

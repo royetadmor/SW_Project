@@ -1,6 +1,6 @@
-//
-// Created by Roye on 18/08/2020.
-//
+/*
+* Created by Roye on 18/08/2020.
+*/
 
 #include "MatrixAndVectorOps.h"
 #include <math.h>
@@ -34,7 +34,8 @@ void normalizeVector(int length, double *vector){
 double MultiplyVectorAndVector(double* vector1, double* vector2, int length)
 {
     double sum = 0;
-    for (int i = 0; i < length; ++i) {
+    int i;
+    for (i = 0; i < length; ++i) {
         sum += vector1[i]*vector2[i];
     }
     return sum;
