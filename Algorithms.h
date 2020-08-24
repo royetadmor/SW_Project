@@ -4,12 +4,6 @@
 
 #ifndef SW_PROJECT_ALGORITHMS_H
 #define SW_PROJECT_ALGORITHMS_H
-typedef struct division
-{
-    int length_of_group1;
-    int length_of_group2;
-    int* group1;
-    int* group2;
-}division;
-division* Algorithem1(double** modularity_matrix,int length);
+#include "List.h"
+void Algorithem1(double** modularity_matrix,int length, list* group1, list* group2);
 #endif /*SW_PROJECT_ALGORITHMS_H*/

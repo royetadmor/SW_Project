@@ -22,7 +22,7 @@
 double* PowerIterationsWithSparse(double** matrix, double * init_vector, int size)
 {
     int iter = 0;
-    int i , j;
+    int i;
     double* new_vector;
     spmat* A = spmat_allocate_list(size);
     for (i = 0; i < size; ++i) {
@@ -37,10 +37,7 @@ double* PowerIterationsWithSparse(double** matrix, double * init_vector, int siz
     }
     printf("Iter: %d\n",iter);
     printf("Normalized eigenvector is: \n");
-    for (j = 0; j < size; ++j) {
-        printf("%f ",init_vector[j]);
-    }
-    printf("\ndone");
+    printVector(size,init_vector);
     A->free(A);
     free(new_vector);
     return init_vector;

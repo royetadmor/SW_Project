@@ -31,13 +31,27 @@ double CalculateLeadingEigenpair(double** matrix,double* init_vector, int length
     double norm1;
     double* new_vector;
     double eigen_val;
+    double **tag_matrix;
+    int i;
+    int j;
+    tag_matrix = (double**)malloc(length* sizeof(double*));
+    for (i = 0; i < length; ++i) {
+        tag_matrix[i] = (double*)malloc(length* sizeof(double));
+    }
+    for (i = 0; i < length; ++i) {
+        for (j = 0; j < length; ++j) {
+            tag_matrix[i][j] = matrix[i][j];
+        }
+    }
     norm1 = Calculate1norm(matrix,length);
     new_vector = (double*)calloc(length, sizeof(double));
-    CalculateNewMatrix(matrix,norm1,length);
-    PowerIterationsWithSparse(matrix,init_vector,length);
+    CalculateNewMatrix(tag_matrix,norm1,length);
+    printf("\n\n");
+    printDoubleMat(tag_matrix,length);
+    PowerIterationsWithSparse(tag_matrix,init_vector,length);
     free(new_vector);
-    eigen_val = CalculateEigenvalue(matrix,init_vector,length);
-/*    eigen_val = eigen_val - norm1;*/
+    eigen_val = CalculateEigenvalue(tag_matrix,init_vector,length);
+    eigen_val = eigen_val - norm1;
     return eigen_val;
 
 
@@ -62,7 +76,7 @@ double Calculate1norm(double** matrix,int length)
     free(arr);
     return max;
 }
-void CalculateNewMatrix(double** matrix, int norm ,int length)
+void CalculateNewMatrix(double** matrix, double norm ,int length)
 {
     int i;
     for (i = 0; i < length; ++i) {

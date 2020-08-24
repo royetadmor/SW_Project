@@ -6,8 +6,8 @@ clean:
 	rm -rf *.o
 	rm cluster
 
-cluster: cluster.o MatrixAndVectorOps.o input.o modularity.o Algorithms.o MathHelpers.o eigen.o sparse.o spmat.o
-	gcc cluster.o MatrixAndVectorOps.o input.o modularity.o Algorithms.o MathHelpers.o eigen.o sparse.o spmat.o -o cluster $(LIBS)
+cluster: cluster.o MatrixAndVectorOps.o input.o modularity.o Algorithms.o MathHelpers.o eigen.o sparse.o spmat.o List.o
+	gcc cluster.o MatrixAndVectorOps.o input.o modularity.o Algorithms.o MathHelpers.o eigen.o sparse.o spmat.o List.o -o cluster $(LIBS)
 cluster.o: cluster.c
 	gcc $(FLAGS) -c cluster.c
 
@@ -44,3 +44,7 @@ spmat: spmat.o
 	gcc spmat.o -o spmat $(LIBS)
 spmat.o: spmat.c
 	gcc $(FLAGS) -c spmat.c
+List: List.o
+	gcc List.o -o List $(LIBS)
+List.o: List.c
+	gcc $(FLAGS) -c List.c

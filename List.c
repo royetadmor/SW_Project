@@ -11,13 +11,13 @@
 void add(int val, list* head)
 {
     list* curr = head;
-    while (curr)
+    if(curr->val == INT_MIN)
     {
-        if(curr->val == -1)
-        {
-            curr->val = val;
-            return;
-        }
+        curr->val = val;
+        return;
+    }
+    while (curr->next)
+    {
         curr = curr->next;
     }
     curr->next = (list*)malloc(sizeof(list));

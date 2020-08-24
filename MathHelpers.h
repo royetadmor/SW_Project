@@ -25,7 +25,7 @@ double Calculate1norm(double** matrix,int length);
 /*
  * Calculates the matrix after adding the 1-norm (C' = ||C_1||*I + C)
  */
-void CalculateNewMatrix(double** matrix, int norm ,int length);
+void CalculateNewMatrix(double** matrix, double norm ,int length);
 
 /*
  * Calculates the leading eigenpair using sparse impl.

@@ -11,7 +11,7 @@
 
 double* multiplyMatrixAndVector(double** matrix, double* vector, double* newVector, int length){
     int i,j;
-    int sum;
+    double sum;
     for(i = 0 ; i < length; i++){
         sum = 0;
         for(j = 0 ; j < length; j++){
