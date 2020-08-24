@@ -13,10 +13,11 @@
 
 
 /* remove later */
-
+/*
 #include "input.c"
 #include "MatrixAndVectorOps.c"
 #include "List.h"
+*/
 /* remove later */
 
 int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* degreesArray, int**matrix){
@@ -42,6 +43,7 @@ int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* de
 /**
  * i assume there is a least 1 node in the list
  */
+/*
 int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatrix){
 
 	int myBTagMatrixLength;
@@ -50,19 +52,20 @@ int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatr
 	myBTagMatrixLength = ListSize(head);
 	myBTagMatrix = (double**)calloc(myBTagMatrixLength, sizeof(double*));
 
-	printDoubleMat(*myBTagMatrix, myBTagMatrixLength);
+	printDoubleMat(myBTagMatrix, myBTagMatrixLength);
 
 
 	return EXIT_SUCCESS;
 
 }
+*/
 
 
-
+/*
 int main(int argc, char* argv[]) {
 
 
-	/*-----------------------------------declarations-----------------------------------*/
+	/ *-----------------------------------declarations-----------------------------------* /
 
 
 	int **matrix = NULL;
@@ -72,9 +75,9 @@ int main(int argc, char* argv[]) {
 	int length;
 	int ass;
 
-	/* list *g; */
+	/ * list *g; * /
 
-	/*-----------------------------------code-----------------------------------*/
+	/ *-----------------------------------code-----------------------------------* /
 
 	printf("Validating input existence ... \n");
 
@@ -100,5 +103,6 @@ int main(int argc, char* argv[]) {
 
 }
 
+*/
 
 

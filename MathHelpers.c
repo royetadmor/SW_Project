@@ -71,7 +71,9 @@ double Calculate1norm(double** matrix,int length)
         }
     }
     for (k = 0; k < length; ++k) {
-        max = fmax(max,arr[k]);
+    	if(arr[k] > max){
+            max = arr[k];
+    	}
     }
     free(arr);
     return max;

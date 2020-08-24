@@ -59,25 +59,4 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
 }
 
 
- void algorithem4(double* s_vector, double** modularity_matrix, int length)
-{
-    double delta_q;
-    int i,q;
-    double* res;
-    list* unmoved;
-    delta_q = 1;
-    unmoved = init_list();
-    res = (double*)malloc(length* sizeof(double));
-    for (i = 0; i < length; ++i) {
-        add(i,unmoved);
-    }
-    while (IS_POSITIVE(delta_q))
-    {
-        for (int i = 0; i < length; ++i) {
-            multiplyMatrixAndVector(modularity_matrix,s_vector,res,length);
-            q = MultiplyVectorAndVector(s_vector,res,length);
-        }
-
-    }
-}
 
