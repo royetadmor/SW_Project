@@ -1,7 +1,3 @@
-/*
- * Created by Roye on 24/08/2020.
- */
-
 #include "List.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -82,6 +78,7 @@ list* init_list()
     head->val = INT_MIN;
     return head;
 }
+
 void printList(list* head)
 {
     list* curr;
@@ -93,3 +90,21 @@ void printList(list* head)
     }
     printf("NULL\n");
 }
+int createArrayFromList(list *head, int *array){
+
+	int i, length, value;
+
+	list *node = head;
+	length = ListSize(head);
+	array = (int*)calloc(length, sizeof(int));
+	for(i = 0 ; i < length ; i++){
+		value = node->val;
+		if(value == 0){
+			return EXIT_FAILURE;
+		}
+		array[i] = value;
+		head = head->next;
+	}
+	return EXIT_SUCCESS;
+}
+
