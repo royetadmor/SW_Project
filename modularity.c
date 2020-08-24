@@ -9,9 +9,15 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
+#include <limits.h>
 
 
+/* remove later */
 
+#include "input.c"
+#include "MatrixAndVectorOps.c"
+#include "List.h"
+/* remove later */
 
 int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* degreesArray, int**matrix){
 	double **myMultMatrix = (double**)calloc(length, sizeof(double*));
@@ -33,14 +39,32 @@ int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* de
 	return EXIT_SUCCESS;
 }
 
+/**
+ * i assume there is a least 1 node in the list
+ */
+int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatrix){
+
+	int myBTagMatrixLength;
+	double **myBTagMatrix ;
 
 
-/*
+	myBTagMatrixLength = ListSize(head);
+	myBTagMatrix = (double**)calloc(myBTagMatrixLength, sizeof(double*));
+	do()
+
+	printDoubleMat(*myBTagMatrix, myBTagMatrixLength);
+
+
+	return EXIT_SUCCESS;
+
+}
+
+
 
 int main(int argc, char* argv[]) {
 
 
-	/ *-----------------------------------declarations-----------------------------------* /
+	/*-----------------------------------declarations-----------------------------------*/
 
 
 	int **matrix = NULL;
@@ -49,22 +73,25 @@ int main(int argc, char* argv[]) {
 	int degreesSum;
 	int length;
 	int ass;
+	/* list *g; */
 
-	/ *-----------------------------------code-----------------------------------* /
+	/*-----------------------------------code-----------------------------------*/
 
-	DEBUG_PRINT(("Validating input existence ... \n"));
+	printf("Validating input existence ... \n");
 
 	assert(argc != 0);
 	assert(argv[1] != NULL);
 
-	DEBUG_PRINT(("There is input.\n"));
+	printf("There is input.\n");
 
 
-	DEBUG_PRINT(("Validating input existence ... \n"));
+	printf("Validating input existence ... \n");
 	ass = getInputMatrix(argv[1], &length, &degreesSum, &degreesArray, &matrix);
 	assert(ass == 0);
 
-	ass = getMultMatrix(&multMatrix, length, degreesSum , degreesArray, matrix);
+	ass = getModularityMatrix(&multMatrix, length, degreesSum , degreesArray, matrix);
+	printDoubleMat(multMatrix, length);
+
 
 
 	assert(ass == 0);
@@ -74,5 +101,5 @@ int main(int argc, char* argv[]) {
 
 }
 
- */
+
 

@@ -1,7 +1,3 @@
-//
-// Created by Roye on 24/08/2020.
-//
-
 #include "List.h"
 #include <stdlib.h>
 #include <stdio.h>
