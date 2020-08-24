@@ -40,8 +40,6 @@ int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* de
  * i assume there is a least 1 node in the list
  */
 
- /*
-=======
 /*
 >>>>>>> 4bcc6ac9f389df031e179bda7ccd620eefeca088
 int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatrix){
