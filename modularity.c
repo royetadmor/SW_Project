@@ -13,7 +13,7 @@
 
 
 
-int getModularityMatrix(double ***multMatrix, int length, int degreesSum, int* degreesArray, int**matrix){
+int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* degreesArray, int**matrix){
 	double **myMultMatrix = (double**)calloc(length, sizeof(double*));
 	int i = 0 , j = 0;
 	double multiplication = 0;
@@ -29,7 +29,7 @@ int getModularityMatrix(double ***multMatrix, int length, int degreesSum, int* d
 	}
 	i = 0;
 
-	*multMatrix = myMultMatrix;
+	*modMatrix = myMultMatrix;
 	return EXIT_SUCCESS;
 }
 

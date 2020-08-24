@@ -1,6 +1,6 @@
-//
-// Created by Roye on 12/08/2020.
-//
+/*
+ * Created by Roye on 12/08/2020.
+ */
 
 #ifndef SW_PROJECT_EIGEN_H
 #define SW_PROJECT_EIGEN_H
@@ -14,4 +14,4 @@ int hasEpsilonDifference(double* vector, double* oldVector, int length);
 void iterate(double** matrix, double* vector, double* newVector, int length);
 
 
-#endif //SW_PROJECT_EIGEN_H
+#endif /*SW_PROJECT_EIGEN_H*/

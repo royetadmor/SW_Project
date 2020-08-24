@@ -74,7 +74,6 @@ double* generateRandomVector(int length){
     }
     return vectorToReturn;
 }
-<<<<<<< HEAD
 
 
 void printIntMat(int **mat, int length){

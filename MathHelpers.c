@@ -1,6 +1,6 @@
-//
-// Created by Roye on 18/08/2020.
-//
+/*
+ * Created by Roye on 18/08/2020.
+ */
 
 #include "MathHelpers.h"
 #include "MatrixAndVectorOps.h"
@@ -37,7 +37,7 @@ double CalculateLeadingEigenpair(double** matrix,double* init_vector, int length
     PowerIterationsWithSparse(matrix,init_vector,length);
     free(new_vector);
     eigen_val = CalculateEigenvalue(matrix,init_vector,length);
-    eigen_val = eigen_val - norm1;
+/*    eigen_val = eigen_val - norm1;*/
     return eigen_val;
 
 

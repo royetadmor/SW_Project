@@ -11,5 +11,7 @@ double MultiplyVectorAndVector(double* vector1, double* vector2, int length);
 void printMatrix(double **matrix, int numberOfRows, int numberOfColumns);
 void printVector(int length, double *vector);
 double* generateRandomVector(int length);
+void printIntMat(int **mat, int length);
+void printDoubleMat(double **mat, int length);
 
 #endif /*SW_PROJECT_MATRIXANDVECTOROPS_H*/

@@ -1,6 +1,6 @@
-//
-// Created by Roye on 18/08/2020.
-//
+/*
+* Created by Roye on 18/08/2020.
+*/
 
 #include "Algorithms.h"
 #include "MatrixAndVectorOps.h"
@@ -14,21 +14,29 @@ division* Algorithem1(double** modularity_matrix,int length)
 {
     double* init_vector;
     double eigenvalue;
-    double* s_vector = (double*)malloc(length* sizeof(double));
+    double* s_vector;
     double* res_vector;
     double res;
     int length_of_group1;
     int length_of_group2;
-    int temp_length1 = 0;
-    int temp_length2 = 0;
-    division* division1 = (division*)malloc(sizeof(division));
+    int temp_length1;
+    int temp_length2;
+    int i,j;
+    division* division1;
+    length_of_group1 = 0;
+    length_of_group2 = 0;
+    temp_length1 = 0;
+    temp_length2 = 0;
+    s_vector = (double*)malloc(length* sizeof(double));
+    res_vector = (double*)malloc(length* sizeof(double));
+    division1 = (division*)malloc(sizeof(division));
     init_vector = generateRandomVector(length);
     eigenvalue = CalculateLeadingEigenpair(modularity_matrix,init_vector,length);
     if(!IS_POSITIVE(eigenvalue))
     {
         return NULL;
     }
-    for (int i = 0; i < length; ++i)
+    for (i = 0; i < length; ++i)
     {
         if(IS_POSITIVE(init_vector[i]))
         {
@@ -51,7 +59,7 @@ division* Algorithem1(double** modularity_matrix,int length)
     division1->group2 = (int*)malloc(length_of_group2* sizeof(int));
     division1->length_of_group1 = length_of_group1;
     division1->length_of_group2 = length_of_group2;
-    for (int j = 0; j < length; ++j) {
+    for (j = 0; j < length; ++j) {
         if(IS_POSITIVE(s_vector[j]))
         {
             division1->group1[temp_length1] = j;
@@ -67,3 +75,15 @@ division* Algorithem1(double** modularity_matrix,int length)
     return division1;
 
 }
+
+/*
+ void algorithem4(double* s_vector, double** modularity_matrix, int length)
+{
+    double delta_q;
+    delta_q = 1;
+    while (IS_POSITIVE(delta_q))
+    {
+
+    }
+}
+ */

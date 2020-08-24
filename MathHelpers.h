@@ -1,6 +1,6 @@
-//
-// Created by Roye on 18/08/2020.
-//
+/*
+ * Created by Roye on 18/08/2020.
+ */
 
 #ifndef SW_PROJECT_MATHHELPERS_H
 #define SW_PROJECT_MATHHELPERS_H
@@ -35,4 +35,4 @@ void CalculateNewMatrix(double** matrix, int norm ,int length);
  */
 double CalculateLeadingEigenpair(double** matrix,double* init_vector, int length);
 
-#endif //SW_PROJECT_MATHHELPERS_H
+#endif /*SW_PROJECT_MATHHELPERS_H*/
