@@ -10,44 +10,47 @@
 #include <assert.h>
 #include <stdlib.h>
 
-/* include internal packages */
-#include "input.c"
 
 
-int getMultMatrix(int*** multMatrix, int length, int* array){
 
-	int **myMultMatrix = (int**)calloc(length, sizeof(int*));
+int getModularityMatrix(double ***multMatrix, int length, int degreesSum, int* degreesArray, int**matrix){
+	double **myMultMatrix = (double**)calloc(length, sizeof(double*));
 	int i = 0 , j = 0;
+	double multiplication = 0;
 
-	for(; i< length; i++){
-		myMultMatrix[i] = (int*)calloc(length, sizeof(int));
+	for(; i < length; i++){
+		myMultMatrix[i] = (double*)calloc(length, sizeof(double));
 		for (; j < length; j++){
-			myMultMatrix[i][j] = array[i] * array[j];
+			multiplication = (double)(degreesArray[i] * degreesArray[j]);
+			myMultMatrix[i][j] =  matrix[i][j] - (multiplication / (double)(degreesSum));
 		}
 		myMultMatrix[i][i] = 0;
+		j = 0;
 	}
+	i = 0;
 
 	*multMatrix = myMultMatrix;
-
 	return EXIT_SUCCESS;
 }
 
 
+
+/*
+
 int main(int argc, char* argv[]) {
 
 
-	/*-----------------------------------declarations-----------------------------------*/
+	/ *-----------------------------------declarations-----------------------------------* /
 
 
 	int **matrix = NULL;
+	double **multMatrix = NULL;
 	int *degreesArray = NULL;
 	int degreesSum;
 	int length;
 	int ass;
-	int i = 0 ,j = 0;
 
-	/*-----------------------------------code-----------------------------------*/
-
+	/ *-----------------------------------code-----------------------------------* /
 
 	DEBUG_PRINT(("Validating input existence ... \n"));
 
@@ -59,20 +62,17 @@ int main(int argc, char* argv[]) {
 
 	DEBUG_PRINT(("Validating input existence ... \n"));
 	ass = getInputMatrix(argv[1], &length, &degreesSum, &degreesArray, &matrix);
-	for (; i < length; i ++){
-		for(; j < length; j++){
-			printf("%d ",*(*(matrix + i)+j) );
-		}
-		printf("\n");
-	}
 	assert(ass == 0);
 
+	ass = getMultMatrix(&multMatrix, length, degreesSum , degreesArray, matrix);
 
 
-
-
+	assert(ass == 0);
 
 
 	return EXIT_SUCCESS;
 
 }
+
+ */
+

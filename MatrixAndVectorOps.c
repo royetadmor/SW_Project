@@ -8,6 +8,7 @@
 #include <time.h>
 #include <stdlib.h>
 
+
 double* multiplyMatrixAndVector(double** matrix, double* vector, double* newVector, int length){
     int i,j;
     int sum;
@@ -20,6 +21,8 @@ double* multiplyMatrixAndVector(double** matrix, double* vector, double* newVect
     }
     return newVector;
 }
+
+
 void normalizeVector(int length, double *vector){
     int i;
     long double	sum = 0;
@@ -31,6 +34,8 @@ void normalizeVector(int length, double *vector){
         vector[i] = vector[i]/sum;
     }
 }
+
+
 double MultiplyVectorAndVector(double* vector1, double* vector2, int length)
 {
     double sum = 0;
@@ -39,6 +44,8 @@ double MultiplyVectorAndVector(double* vector1, double* vector2, int length)
     }
     return sum;
 }
+
+
 void printMatrix(double **matrix, int numberOfRows, int numberOfColumns){
     int i ,j;
     for (i = 0 ; i < numberOfRows; i ++){
@@ -55,6 +62,8 @@ void printVector(int length, double *vector){
     }
     printf("\n");
 }
+
+
 double* generateRandomVector(int length){
     int i;
     double* vectorToReturn = (double*)malloc(sizeof(double)*length);
@@ -64,3 +73,30 @@ double* generateRandomVector(int length){
     }
     return vectorToReturn;
 }
+
+
+void printIntMat(int **mat, int length){
+	int i = 0 , j = 0;
+	for (; i < length; i++){
+		for(; j < length; j++){
+			printf("%6d ",*(*(mat + i)+j) );
+		}
+		j = 0;
+		printf("\n");
+	}
+	i = 0;
+}
+
+
+void printDoubleMat(double **mat, int length){
+	int i = 0 , j = 0;
+	for (; i < length; i++){
+		for(; j < length; j++){
+			printf("%+.3f ",*(*(mat + i)+j) );
+		}
+		j = 0;
+		printf("\n");
+	}
+	i = 0;
+}
+
