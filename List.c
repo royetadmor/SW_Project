@@ -5,6 +5,8 @@
 #include "List.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
+#include <limits.h>
 
 void add(int val, list* head)
 {
@@ -77,6 +79,6 @@ list* init_list()
     list* head;
     head = (list*)malloc(sizeof(list));
     head->next = NULL;
-    head->val = -1;
+    head->val = INT_MIN;
     return head;
 }
