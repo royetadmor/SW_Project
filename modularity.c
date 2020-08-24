@@ -47,10 +47,8 @@ int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatr
 	int myBTagMatrixLength;
 	double **myBTagMatrix ;
 
-
 	myBTagMatrixLength = ListSize(head);
 	myBTagMatrix = (double**)calloc(myBTagMatrixLength, sizeof(double*));
-	do()
 
 	printDoubleMat(*myBTagMatrix, myBTagMatrixLength);
 
@@ -73,6 +71,7 @@ int main(int argc, char* argv[]) {
 	int degreesSum;
 	int length;
 	int ass;
+
 	/* list *g; */
 
 	/*-----------------------------------code-----------------------------------*/
