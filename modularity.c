@@ -39,7 +39,11 @@ int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* de
 /**
  * i assume there is a least 1 node in the list
  */
+<<<<<<< HEAD
  /*
+=======
+/*
+>>>>>>> 4bcc6ac9f389df031e179bda7ccd620eefeca088
 int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatrix){
 
 	int myBTagMatrixLength;
@@ -48,7 +52,54 @@ int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatr
 	myBTagMatrixLength = ListSize(head);
 	myBTagMatrix = (double**)calloc(myBTagMatrixLength, sizeof(double*));
 
-	printDoubleMat(*myBTagMatrix, myBTagMatrixLength);
+	printDoubleMat(myBTagMatrix, myBTagMatrixLength);
+
+
+	return EXIT_SUCCESS;
+
+}
+*/
+
+<<<<<<< HEAD
+*/
+=======
+
+/*
+int main(int argc, char* argv[]) {
+
+
+	/ *-----------------------------------declarations-----------------------------------* /
+
+
+	int **matrix = NULL;
+	double **multMatrix = NULL;
+	int *degreesArray = NULL;
+	int degreesSum;
+	int length;
+	int ass;
+
+	/ * list *g; * /
+
+	/ *-----------------------------------code-----------------------------------* /
+
+	printf("Validating input existence ... \n");
+
+	assert(argc != 0);
+	assert(argv[1] != NULL);
+
+	printf("There is input.\n");
+
+
+	printf("Validating input existence ... \n");
+	ass = getInputMatrix(argv[1], &length, &degreesSum, &degreesArray, &matrix);
+	assert(ass == 0);
+
+	ass = getModularityMatrix(&multMatrix, length, degreesSum , degreesArray, matrix);
+	printDoubleMat(multMatrix, length);
+
+
+
+	assert(ass == 0);
 
 
 	return EXIT_SUCCESS;
@@ -56,4 +107,6 @@ int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatr
 }
 
 */
+
+>>>>>>> 4bcc6ac9f389df031e179bda7ccd620eefeca088
 

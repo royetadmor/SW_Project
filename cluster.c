@@ -34,5 +34,7 @@ int main(int argc, char* argv[])
     printList(group2);
     printf("Done");
 
+    return EXIT_SUCCESS;
+
 
 }

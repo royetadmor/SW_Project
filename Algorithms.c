@@ -124,3 +124,4 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
     }
 }
 */
+
