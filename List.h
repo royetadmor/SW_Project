@@ -13,4 +13,5 @@ void add(int val, list* head);
 list* removeNode(int val, list* head);
 list* getNode(int val, list* head);
 int ListSize(list* head);
+list* init_list();
 #endif //SW_PROJECT_LIST_H
