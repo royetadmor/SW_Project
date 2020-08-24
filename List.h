@@ -1,6 +1,6 @@
-//
-// Created by Roye on 24/08/2020.
-//
+/*
+ * Created by Roye on 24/08/2020.
+ */
 
 #ifndef SW_PROJECT_LIST_H
 #define SW_PROJECT_LIST_H
@@ -14,4 +14,5 @@ list* removeNode(int val, list* head);
 list* getNode(int val, list* head);
 int ListSize(list* head);
 list* init_list();
-#endif //SW_PROJECT_LIST_H
+void printList(list* head);
+#endif /*SW_PROJECT_LIST_H*/

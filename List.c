@@ -1,6 +1,6 @@
-//
-// Created by Roye on 24/08/2020.
-//
+/*
+ * Created by Roye on 24/08/2020.
+ */
 
 #include "List.h"
 #include <stdlib.h>
@@ -81,4 +81,15 @@ list* init_list()
     head->next = NULL;
     head->val = INT_MIN;
     return head;
+}
+void printList(list* head)
+{
+    list* curr;
+    curr = head;
+    while (curr)
+    {
+        printf("%d -> ",curr->val);
+        curr = curr->next;
+    }
+    printf("NULL\n");
 }
