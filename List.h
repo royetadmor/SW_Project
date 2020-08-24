@@ -11,6 +11,5 @@ list* getNode(int val, list* head);
 int ListSize(list* head);
 list* init_list();
 int createArrayFromList(list *head, int *array);
-#endif
 void printList(list* head);
 #endif
