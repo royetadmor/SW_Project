@@ -101,4 +101,12 @@ void printDoubleMat(double **mat, int length){
 	i = 0;
 }
 
+void printIntVector(int length, int *vector){
+    int i;
+    for(i = 0; i < length; i++){
+        printf("%6d ",vector[i]);
+    }
+    printf("\n");
+}
+
 

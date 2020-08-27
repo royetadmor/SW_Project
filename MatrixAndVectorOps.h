@@ -13,5 +13,6 @@ void printVector(int length, double *vector);
 double* generateRandomVector(int length);
 void printIntMat(int **mat, int length);
 void printDoubleMat(double **mat, int length);
+void printIntVector(int length, int *vector);
 
 #endif /*SW_PROJECT_MATRIXANDVECTOROPS_H*/

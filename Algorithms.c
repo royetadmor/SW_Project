@@ -11,7 +11,6 @@
 #include "math.h"
 #include "float.h"
 #define IS_POSITIVE(x) ((x) > 0.00001)
-#define MAX(x,y)((x)>(y)?x:y)
 
 
 void Algorithem1(double** modularity_matrix,int length, list* group1, list* group2)
@@ -41,6 +40,8 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
             s_vector[i] = -1;
         }
     }
+    Algorithem4(s_vector,modularity_matrix,length);
+    printVector(length,s_vector);
     multiplyMatrixAndVector(modularity_matrix,s_vector,res_vector,length);
     res = MultiplyVectorAndVector(res_vector,s_vector,length);
     if(!IS_POSITIVE(res))
@@ -61,35 +62,43 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
 
 }
 
-/*
- void algorithem4(double* s_vector, double** modularity_matrix, int length)
+
+ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
 {
-    double delta_q;
-    int i,q,tmp;
+    /* Declarations */
+    double delta_q,tmp,q;
+    int i,j,k, tmp_int;
     double* res;
-    int* score;
+    double* score;
     int* indices;
-    int* improvement;
+    double* improvement;
     int i_tag;
     int j_tag;
     list* unmoved;
     list* curr;
-    delta_q = 1;
-    j_tag = (int)-DBL_MAX;
-    j_tag = -DBL_MAX;
-    unmoved = init_list();
-    curr = unmoved;
+    delta_q = 1.0;
+    i_tag = -1;
+    j_tag = -1;
     res = (double*)malloc(length* sizeof(double));
-    score = (int*)malloc(length* sizeof(int));
+    score = (double*)malloc(length* sizeof(double));
     indices = (int*)malloc(length* sizeof(int));
-    improvement = (int*)malloc(length* sizeof(int));
+    improvement = (double*)malloc(length*sizeof(double));
+    /* Declarations */
 
-    for (i = 0; i < length; ++i) {
-        add(i,unmoved);
-    }
+
     while (IS_POSITIVE(delta_q))
     {
+        /* Creating set of unmoved indices */
+        unmoved = init_list();
         for (i = 0; i < length; ++i) {
+            add(i,unmoved);
+        }
+        curr = unmoved;
+
+        /* Looking for improvement for the partition */
+        for (i = 0; i < length; ++i) {
+
+            /* Calculating score for each vertex and finding maximum score's index */
             multiplyMatrixAndVector(modularity_matrix,s_vector,res,length);
             q = MultiplyVectorAndVector(s_vector,res,length);
             while (curr)
@@ -97,16 +106,23 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
                 s_vector[curr->val] = (-1)*s_vector[curr->val];
                 multiplyMatrixAndVector(modularity_matrix,s_vector,res,length);
                 tmp = MultiplyVectorAndVector(s_vector,res,length);
-                score[curr->val] = q - tmp;
+                score[curr->val] = tmp - q;
                 s_vector[curr->val] = (-1)*s_vector[curr->val];
                 curr = curr->next;
             }
             curr = unmoved;
+            tmp = -DBL_MAX;
             while (curr)
             {
-                j_tag = (j_tag,score[curr->val]);
+                if(score[curr->val] > tmp)
+                {
+                    tmp = score[curr->val];
+                    j_tag = curr->val;
+                }
                 curr = curr->next;
             }
+
+            /* moving vertex j_tag and calculating improvement */
             s_vector[j_tag] = (-1)*s_vector[j_tag];
             indices[i] = j_tag;
             if(i == 0)
@@ -116,12 +132,46 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
             {
                 improvement[i] = improvement[i-1] + score[j_tag];
             }
-            removeNode(j_tag,unmoved);
+
+            /* Remove and reset */
+            unmoved = removeNode(j_tag,unmoved);
+            curr = unmoved;
         }
 
+        /* Calculating best improvement for s and update accordingly */
+        printf("Division after calculating improvements: \n");
+        printVector(length,s_vector);
+        tmp = -DBL_MAX;
+        for (j = 0; j < length; ++j) {
+            if (tmp < improvement[j])
+            {
+                i_tag = j;
+                tmp = improvement[j];
+            }
+        }
+        printf("Indices: \n");
+        printIntVector(length,indices);
+        for (k = length - 1; k > i_tag ; --k) {
+            tmp_int = indices[k];
+            s_vector[tmp_int] = (-1)*s_vector[tmp_int];
 
+        }
+        if (i_tag == length)
+        {
+            delta_q = 0;
+        } else{
+            delta_q = improvement[i_tag];
+        }
+        printf("Improvement delta: %f\n",delta_q);
+        printf("Current division: \n");
+        printVector(length,s_vector);
 
     }
+    free(res);
+    free(score);
+    free(indices);
+    free(improvement);
+
 }
-*/
+
 

@@ -7,7 +7,7 @@
 void add(int val, list* head)
 {
     list* curr = head;
-    if(curr->val == INT_MIN)
+    if(curr != NULL && curr->val == INT_MIN)
     {
         curr->val = val;
         return;
@@ -31,7 +31,7 @@ list* removeNode(int val, list* head)
     }
     while (curr)
     {
-        if(curr->next->val == val)
+        if(curr->next != NULL && curr->next->val == val)
         {
             curr->next = curr->next->next;
             return head;

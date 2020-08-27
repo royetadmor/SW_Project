@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
     group2 = init_list();
     printf("Because gcc is annoying: %d\n",argc);
     file = argv[1];
-    /*file = "/Users/user/CLionProjects/SW_Project/graph.in";*/
+    /* file = "/Users/user/CLionProjects/SW_Project/graph.in"; */
     getInputMatrix(file,&length,&degreesSum,&degreesArray,&matrix);
     getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,matrix);
     printDoubleMat(modMatrix,length);
