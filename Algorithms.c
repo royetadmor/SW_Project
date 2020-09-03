@@ -121,11 +121,17 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
             }
 
         }
+        printf("pList:\n");
         for (j = 0; j < pIndex; ++j) {
             printList(pList[j]);
         }
-        printf("Done");
+        printf("oList:\n");
+        for (j = 0; j < oIndex; ++j) {
+            printList(oList[j]);
+        }
     }
+
+    printf("Done");
     return oList;
 
 }
