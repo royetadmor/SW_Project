@@ -44,7 +44,6 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
         }
     }
     Algorithem4(s_vector,modularity_matrix,length);
-    printVector(length,s_vector);
     multiplyMatrixAndVector(modularity_matrix,s_vector,res_vector,length);
     res = MultiplyVectorAndVector(res_vector,s_vector,length);
     if(!IS_POSITIVE(res))
@@ -67,7 +66,7 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
 
 }
 
-void Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArray)
+list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArray)
 {
     int i,j, pIndex, oIndex;
     list* index_list;
@@ -76,6 +75,7 @@ void Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArray)
     list* group1;
     list* group2;
     double** modMatrix;
+    double** BTagMatrix;
 
     pIndex = 0;
     oIndex = 0;
@@ -92,7 +92,8 @@ void Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArray)
     while (pIndex != 0)
     {
         getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
-        Algorithem1(modMatrix,length,pList[pIndex - 1],group1,group2);
+        getBTagMatrix(&BTagMatrix,modMatrix,pList[pIndex - 1]);
+        Algorithem1(BTagMatrix,length,pList[pIndex - 1],group1,group2);
         --pIndex;
         if(ListSize(group1) == 0 || ListSize(group2) == 0)
         {
@@ -125,10 +126,9 @@ void Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArray)
             printList(pList[j]);
         }
         printf("Done");
-        return;
+        return NULL;
     }
-
-
+    return oList;
 
 }
 void Algorithem4(double* s_vector, double** modularity_matrix, int length)
@@ -227,7 +227,6 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
             delta_q = improvement[i_tag];
         }
         printf("Improvement delta: %f\n",delta_q);
-        printVector(length,s_vector);
     }
     free(res);
     free(score);
