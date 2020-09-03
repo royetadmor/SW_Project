@@ -36,7 +36,7 @@ int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* de
 }
 
 
-int getBTagMatrix(double ***BTagMatrix, double **modMatrix, list *indices){
+int getBTagMatrix(double ***BTagMatrix, int length, double **modMatrix, list *indices){
 
 	int indicesLength;
     double **myBTagMatrix;
@@ -57,6 +57,10 @@ int getBTagMatrix(double ***BTagMatrix, double **modMatrix, list *indices){
     		myBTagMatrix[i][j] = tmpVal;
     		nodeSum += tmpVal;
     		columnsPointer = columnsPointer->next;
+    	}
+    	nodeSum = 0;
+    	for(j = 0; i < length; i++ ){
+    		nodeSum += modMatrix[i][j];
     	}
     	for(j = 0; j < indicesLength ; j++){
     		myBTagMatrix[i][j] -= nodeSum;

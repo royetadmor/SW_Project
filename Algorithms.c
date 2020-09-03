@@ -91,7 +91,7 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
         group1 = init_list();
         group2 = init_list();
         getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
-        getBTagMatrix(&BTagMatrix,modMatrix,pList[pIndex - 1]);
+        getBTagMatrix(&BTagMatrix, length, modMatrix,pList[pIndex - 1]);
         printf("\n\nThe Vector:\n");
         printList(pList[pIndex - 1]);
         printf("BTagMatrix:\n");
