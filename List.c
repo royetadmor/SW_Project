@@ -65,7 +65,10 @@ int ListSize(list* head)
     count = 0;
     while (curr)
     {
-        ++count;
+        if(curr->val != INT_MIN)
+        {
+            ++count;
+        }
         curr = curr->next;
     }
     return count;

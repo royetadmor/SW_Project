@@ -98,14 +98,17 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
         printDoubleMat(BTagMatrix, ListSize(pList[pIndex - 1]));
         printf("\n");
         Algorithem1(BTagMatrix,ListSize(pList[pIndex - 1]),pList[pIndex - 1],group1,group2);
-        --pIndex;
         if(ListSize(group1) == 0 || ListSize(group2) == 0)
         {
-            oList[oIndex] = pList[pIndex];
+            oList[oIndex] = pList[pIndex - 1];
             oIndex++;
+            pList[pIndex - 1] = NULL;
+            --pIndex;
         }
         else
         {
+            pList[pIndex - 1] = NULL;
+            --pIndex;
             if (ListSize(group1) == 1)
             {
                 oList[oIndex] = group1;
