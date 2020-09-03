@@ -44,7 +44,6 @@ double CalculateLeadingEigenpair(double** matrix,double* init_vector, int length
     norm1 = Calculate1norm(matrix,length);
     CalculateNewMatrix(tag_matrix,norm1,length);
     printf("\n\n");
-    printDoubleMat(tag_matrix,length);
     PowerIterationsWithSparse(tag_matrix,init_vector,length);
     eigen_val = CalculateEigenvalue(tag_matrix,init_vector,length);
     eigen_val = eigen_val - norm1;

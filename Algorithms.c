@@ -43,7 +43,7 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
             s_vector[i] = -1;
         }
     }
-    Algorithem4(s_vector,modularity_matrix,length);
+    /*Algorithem4(s_vector,modularity_matrix,length);*/
     multiplyMatrixAndVector(modularity_matrix,s_vector,res_vector,length);
     res = MultiplyVectorAndVector(res_vector,s_vector,length);
     if(!IS_POSITIVE(res))
@@ -92,6 +92,11 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
         group2 = init_list();
         getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
         getBTagMatrix(&BTagMatrix,modMatrix,pList[pIndex - 1]);
+        printf("\n\nThe Vector:\n");
+        printList(pList[pIndex - 1]);
+        printf("BTagMatrix:\n");
+        printDoubleMat(BTagMatrix, ListSize(pList[pIndex - 1]));
+        printf("\n");
         Algorithem1(BTagMatrix,ListSize(pList[pIndex - 1]),pList[pIndex - 1],group1,group2);
         --pIndex;
         if(ListSize(group1) == 0 || ListSize(group2) == 0)
