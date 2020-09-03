@@ -75,11 +75,9 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
     list* group1;
     list* group2;
     double** modMatrix;
-    double **BTagMatrix = (double**)calloc(1, sizeof(double**)); /* delete - hadar dev*/
+    double **BTagMatrix;
     pIndex = 0;
     oIndex = 0;
-    group1 = init_list();
-    group2 = init_list();
     pList = (list**)malloc(length* sizeof(list*));
     oList = (list**)malloc(length* sizeof(list*));
     index_list = init_list();
@@ -90,11 +88,11 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
     ++pIndex;
     while (pIndex != 0)
     {
+        group1 = init_list();
+        group2 = init_list();
         getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
         getBTagMatrix(&BTagMatrix,modMatrix,pList[pIndex - 1]);
-        printf("HAHAHAHAHAHAHAHAHHAHAHAHHAHHAHAAHHAHA\n");
-        printDoubleMat(BTagMatrix,ListSize(pList[pIndex - 1]));
-        Algorithem1(modMatrix,length,pList[pIndex - 1],group1,group2);
+        Algorithem1(BTagMatrix,ListSize(pList[pIndex - 1]),pList[pIndex - 1],group1,group2);
         --pIndex;
         if(ListSize(group1) == 0 || ListSize(group2) == 0)
         {
@@ -125,11 +123,8 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
         }
         for (j = 0; j < pIndex; ++j) {
             printList(pList[j]);
-            getBTagMatrix( &BTagMatrix, modMatrix, pList[j]);
-            printDoubleMat(BTagMatrix, ListSize(pList[j]));
         }
         printf("Done");
-        return NULL;
     }
     return oList;
 
