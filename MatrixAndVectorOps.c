@@ -69,7 +69,14 @@ double* generateRandomVector(int length){
 
 void printIntMat(int **mat, int length){
 	int i = 0 , j = 0;
+	printf("%6d ",-1);
+	for(;i < length; i++){
+		printf("%6d ",i);
+	}
+	printf("\n");
+	i = 0;
 	for (; i < length; i++){
+		printf("%6d ",i);
 		for(; j < length; j++){
 			printf("%6d ",*(*(mat + i)+j) );
 		}
@@ -82,7 +89,14 @@ void printIntMat(int **mat, int length){
 
 void printDoubleMat(double **mat, int length){
 	int i = 0 , j = 0;
+	printf("%6d ",-1);
+	for(;i < length; i++){
+		printf("%6d ",i);
+	}
+	printf("\n");
+	i = 0;
 	for (; i < length; i++){
+		printf("%6d ",i);
 		for(; j < length; j++){
 			printf("%+.3f ",*(*(mat + i)+j) );
 		}
@@ -91,6 +105,7 @@ void printDoubleMat(double **mat, int length){
 	}
 	i = 0;
 }
+
 
 void printIntVector(int length, int *vector){
     int i;

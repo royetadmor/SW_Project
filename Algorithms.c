@@ -75,8 +75,7 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
     list* group1;
     list* group2;
     double** modMatrix;
-    double** BTagMatrix;
-
+    double **BTagMatrix = (double**)calloc(1, sizeof(double**)); /* delete - hadar dev*/
     pIndex = 0;
     oIndex = 0;
     group1 = init_list();
@@ -124,6 +123,8 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
         }
         for (j = 0; j < pIndex; ++j) {
             printList(pList[j]);
+            getBTagMatrix( &BTagMatrix, modMatrix, pList[j]);
+            printDoubleMat(BTagMatrix, ListSize(pList[j]));
         }
         printf("Done");
         return NULL;
