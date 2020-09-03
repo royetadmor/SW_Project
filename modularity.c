@@ -10,11 +10,10 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <limits.h>
+#include "List.h"
+#include "MatrixAndVectorOps.h"
 
 
-/* remove later */
-
-/* remove later */
 
 int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* degreesArray, int**matrix){
 	double **myMultMatrix = (double**)calloc(length, sizeof(double*));
@@ -36,69 +35,37 @@ int getModularityMatrix(double ***modMatrix, int length, int degreesSum, int* de
 	return EXIT_SUCCESS;
 }
 
-/**
- * i assume there is a least 1 node in the list
- */
 
-/*
->>>>>>> 4bcc6ac9f389df031e179bda7ccd620eefeca088
-int generateBTagMatrix(list *head, double ***BTagMatrix, double **modularityMatrix){
+int getBTagMatrix(double ***BTagMatrix, double **modMatrix, list *indices){
 
-	int myBTagMatrixLength;
-	double **myBTagMatrix ;
-
-	myBTagMatrixLength = ListSize(head);
-	myBTagMatrix = (double**)calloc(myBTagMatrixLength, sizeof(double*));
-
-	printDoubleMat(myBTagMatrix, myBTagMatrixLength);
+	int indicesLength;
+    double **myBTagMatrix;
+    double tmpVal, nodeSum;
+    int i, j;
+    list *rowPointer, *columnsPointer;
 
 
-	return EXIT_SUCCESS;
-
-}
-*/
-
-
-/*
-int main(int argc, char* argv[]) {
-
-
-	/ *-----------------------------------declarations-----------------------------------* /
-
-
-	int **matrix = NULL;
-	double **multMatrix = NULL;
-	int *degreesArray = NULL;
-	int degreesSum;
-	int length;
-	int ass;
-
-	/ * list *g; * /
-
-	/ *-----------------------------------code-----------------------------------* /
-
-	printf("Validating input existence ... \n");
-
-	assert(argc != 0);
-	assert(argv[1] != NULL);
-
-	printf("There is input.\n");
-
-
-	printf("Validating input existence ... \n");
-	ass = getInputMatrix(argv[1], &length, &degreesSum, &degreesArray, &matrix);
-	assert(ass == 0);
-
-	ass = getModularityMatrix(&multMatrix, length, degreesSum , degreesArray, matrix);
-	printDoubleMat(multMatrix, length);
-
-
-
-	assert(ass == 0);
-
+    indicesLength = ListSize(indices);
+    myBTagMatrix = (double**)calloc(indicesLength, sizeof(double*));
+	rowPointer = indices;
+    for(i = 0 ; i < indicesLength; i++){
+    	nodeSum = 0;
+    	columnsPointer = indices;
+    	myBTagMatrix[i] = (double*)calloc(indicesLength, sizeof(double));
+    	for(j = 0; j < indicesLength ; j++){
+    		tmpVal = modMatrix[rowPointer->val][columnsPointer->val];
+    		myBTagMatrix[i][j] = tmpVal;
+    		nodeSum += tmpVal;
+    		columnsPointer = columnsPointer->next;
+    	}
+    	for(j = 0; j < indicesLength ; j++){
+    		myBTagMatrix[i][j] -= nodeSum;
+    	}
+    	rowPointer = rowPointer->next;
+    }
+    *BTagMatrix = myBTagMatrix;
 
 	return EXIT_SUCCESS;
-
 }
 
-*/
+
