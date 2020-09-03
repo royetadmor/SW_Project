@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     int** matrix;
     printf("Because gcc is annoying: %d\n",argc);
     file = argv[1];
-    /* file = "/Users/user/CLionProjects/SW_Project/graph.in"; */
+    file = "/Users/user/CLionProjects/SW_Project/graph.in";
     getInputMatrix(file,&length,&degreesSum,&degreesArray,&matrix);
     Algorithem3(matrix,length,degreesSum,degreesArray);
 

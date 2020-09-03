@@ -62,7 +62,7 @@ int ListSize(list* head)
     int count;
     list* curr;
     curr = head;
-    count = -1;
+    count = 0;
     while (curr)
     {
         ++count;
