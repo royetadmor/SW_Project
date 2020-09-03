@@ -59,14 +59,11 @@ int getBTagMatrix(double ***BTagMatrix, int length, double **modMatrix, list *in
     		columnsPointer = columnsPointer->next;
     	}
     	printf("%d", length);
-    	/*nodeSum = 0;
+    	nodeSum = 0;
     	for(j = 0; j < length; j++ ){
     		nodeSum += modMatrix[i][j];
     	}
-    	for(j = 0; j < indicesLength ; j++){
-    		myBTagMatrix[i][j] -= nodeSum;
-    	}*/
-		myBTagMatrix[i][i] = 0;
+		myBTagMatrix[i][i] -= nodeSum;
     	rowPointer = rowPointer->next;
     }
 
