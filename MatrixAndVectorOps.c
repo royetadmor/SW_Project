@@ -47,15 +47,6 @@ double MultiplyVectorAndVector(double* vector1, double* vector2, int length)
 }
 
 
-void printMatrix(double **matrix, int numberOfRows, int numberOfColumns){
-    int i ,j;
-    for (i = 0 ; i < numberOfRows; i ++){
-        for(j = 0 ; j < numberOfColumns; j++){
-            printf("%10.1f ",*(*(matrix + i)+j) );
-        }
-        printf("\n");
-    }
-}
 void printVector(int length, double *vector){
     int i;
     for(i = 0; i < length; i++){

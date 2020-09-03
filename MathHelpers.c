@@ -29,11 +29,9 @@ double CalculateEigenvalue(double** matrix, double* vector, int length)
 double CalculateLeadingEigenpair(double** matrix,double* init_vector, int length)
 {
     double norm1;
-    double* new_vector;
     double eigen_val;
     double **tag_matrix;
-    int i;
-    int j;
+    int i,j,k;
     tag_matrix = (double**)malloc(length* sizeof(double*));
     for (i = 0; i < length; ++i) {
         tag_matrix[i] = (double*)malloc(length* sizeof(double));
@@ -44,14 +42,16 @@ double CalculateLeadingEigenpair(double** matrix,double* init_vector, int length
         }
     }
     norm1 = Calculate1norm(matrix,length);
-    new_vector = (double*)calloc(length, sizeof(double));
     CalculateNewMatrix(tag_matrix,norm1,length);
     printf("\n\n");
     printDoubleMat(tag_matrix,length);
     PowerIterationsWithSparse(tag_matrix,init_vector,length);
-    free(new_vector);
     eigen_val = CalculateEigenvalue(tag_matrix,init_vector,length);
     eigen_val = eigen_val - norm1;
+    for (k = 0; k < length; ++k) {
+        free(tag_matrix[k]);
+    }
+    free(tag_matrix);
     return eigen_val;
 
 

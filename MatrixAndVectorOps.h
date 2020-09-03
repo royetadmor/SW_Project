@@ -8,7 +8,6 @@
 double* multiplyMatrixAndVector(double** matrix, double* vector, double* newVector, int length);
 void normalizeVector(int length, double *vector);
 double MultiplyVectorAndVector(double* vector1, double* vector2, int length);
-void printMatrix(double **matrix, int numberOfRows, int numberOfColumns);
 void printVector(int length, double *vector);
 double* generateRandomVector(int length);
 void printIntMat(int **mat, int length);

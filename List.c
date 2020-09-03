@@ -78,7 +78,6 @@ list* init_list()
     head->val = INT_MIN;
     return head;
 }
-
 void printList(list* head)
 {
     list* curr;

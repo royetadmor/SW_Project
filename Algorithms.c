@@ -10,10 +10,11 @@
 #include "List.h"
 #include "math.h"
 #include "float.h"
+#include "modularity.h"
 #define IS_POSITIVE(x) ((x) > 0.00001)
 
 
-void Algorithem1(double** modularity_matrix,int length, list* group1, list* group2)
+void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* group1, list* group2)
 {
     double* init_vector;
     double eigenvalue;
@@ -21,6 +22,8 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
     double* res_vector;
     double res;
     int i,j;
+    list* curr;
+    curr = index_list;
     s_vector = (double*)malloc(length* sizeof(double));
     res_vector = (double*)malloc(length* sizeof(double));
     init_vector = generateRandomVector(length);
@@ -51,19 +54,84 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
     for (j = 0; j < length; ++j) {
         if(IS_POSITIVE(s_vector[j]))
         {
-            add(j,group1);
+            add(curr->val,group1);
         }
         else
         {
-            add(j,group2);
+            add(curr->val,group2);
         }
+        curr = curr->next;
     }
     free(s_vector);
+    free(res_vector);
 
 }
 
+void Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArray)
+{
+    int i,j, pIndex, oIndex;
+    list* index_list;
+    list** pList;
+    list** oList;
+    list* group1;
+    list* group2;
+    double** modMatrix;
 
- void Algorithem4(double* s_vector, double** modularity_matrix, int length)
+    pIndex = 0;
+    oIndex = 0;
+    group1 = init_list();
+    group2 = init_list();
+    pList = (list**)malloc(length* sizeof(list*));
+    oList = (list**)malloc(length* sizeof(list*));
+    index_list = init_list();
+    for (i = 0; i < length; ++i) {
+        add(i,index_list);
+    }
+    pList[pIndex] = index_list;
+    ++pIndex;
+    while (pIndex != 0)
+    {
+        getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
+        Algorithem1(modMatrix,length,pList[pIndex - 1],group1,group2);
+        --pIndex;
+        if(ListSize(group1) == 0 || ListSize(group2) == 0)
+        {
+            oList[oIndex] = pList[pIndex];
+            oIndex++;
+        }
+        else
+        {
+            if (ListSize(group1) == 1)
+            {
+                oList[oIndex] = group1;
+                oIndex++;
+            } else
+            {
+                pList[pIndex] = group1;
+                pIndex++;
+            }
+            if (ListSize(group2) == 1)
+            {
+                oList[oIndex] = group2;
+                oIndex++;
+            } else
+            {
+                pList[pIndex] = group2;
+                pIndex++;
+            }
+
+        }
+        for (j = 0; j < pIndex; ++j) {
+            printList(pList[j]);
+        }
+        printf("Done");
+        return;
+    }
+
+
+
+}
+void Algorithem4(double* s_vector, double** modularity_matrix, int length)
 {
     /* Declarations */
     double delta_q,tmp,q;
@@ -139,8 +207,6 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
         }
 
         /* Calculating best improvement for s and update accordingly */
-        printf("Division after calculating improvements: \n");
-        printVector(length,s_vector);
         tmp = -DBL_MAX;
         for (j = 0; j < length; ++j) {
             if (tmp < improvement[j])
@@ -149,8 +215,6 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
                 tmp = improvement[j];
             }
         }
-        printf("Indices: \n");
-        printIntVector(length,indices);
         for (k = length - 1; k > i_tag ; --k) {
             tmp_int = indices[k];
             s_vector[tmp_int] = (-1)*s_vector[tmp_int];
@@ -163,9 +227,7 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
             delta_q = improvement[i_tag];
         }
         printf("Improvement delta: %f\n",delta_q);
-        printf("Current division: \n");
         printVector(length,s_vector);
-
     }
     free(res);
     free(score);
@@ -173,5 +235,3 @@ void Algorithem1(double** modularity_matrix,int length, list* group1, list* grou
     free(improvement);
 
 }
-
-
