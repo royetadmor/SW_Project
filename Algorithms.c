@@ -92,7 +92,9 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
     {
         getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
         getBTagMatrix(&BTagMatrix,modMatrix,pList[pIndex - 1]);
-        Algorithem1(BTagMatrix,length,pList[pIndex - 1],group1,group2);
+        printf("HAHAHAHAHAHAHAHAHHAHAHAHHAHHAHAAHHAHA\n");
+        printDoubleMat(BTagMatrix,ListSize(pList[pIndex - 1]));
+        Algorithem1(modMatrix,length,pList[pIndex - 1],group1,group2);
         --pIndex;
         if(ListSize(group1) == 0 || ListSize(group2) == 0)
         {
