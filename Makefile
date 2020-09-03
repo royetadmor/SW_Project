@@ -2,10 +2,12 @@ FLAGS = -ansi -Wall -Wextra -Werror -pedantic-errors
 LIBS = -lm
 
 all: MatrixAndVectorOps.o input.o cluster
-clean:
+linuxClean:
 	rm -rf *.o
 	rm cluster
-
+winClean:
+	del *.o
+	del cluster.exe
 cluster: cluster.o MatrixAndVectorOps.o input.o modularity.o Algorithms.o MathHelpers.o eigen.o sparse.o spmat.o List.o
 	gcc cluster.o MatrixAndVectorOps.o input.o modularity.o Algorithms.o MathHelpers.o eigen.o sparse.o spmat.o List.o -o cluster $(LIBS)
 cluster.o: cluster.c
