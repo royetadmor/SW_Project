@@ -12,4 +12,5 @@ int ListSize(list* head);
 list* init_list();
 int createArrayFromList(list *head, int *array);
 void printList(list* head);
+void freeList(list* head);
 #endif

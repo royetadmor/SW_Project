@@ -110,3 +110,14 @@ int createArrayFromList(list *head, int *array){
 	return EXIT_SUCCESS;
 }
 
+void freeList(list* head)
+{
+    list* tmp;
+    while (head != NULL)
+    {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+}
+
