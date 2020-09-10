@@ -43,7 +43,7 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
             s_vector[i] = -1;
         }
     }
-    /*Algorithem4(s_vector,modularity_matrix,length);*/
+    Algorithem4(s_vector,modularity_matrix,length);
     multiplyMatrixAndVector(modularity_matrix,s_vector,res_vector,length);
     res = MultiplyVectorAndVector(res_vector,s_vector,length);
     if(!IS_POSITIVE(res))
@@ -138,8 +138,10 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
             printList(oList[j]);
         }
     }
-
-    printf("Done");
+    freeList(index_list);
+    freeList(group1);
+    freeList(group2);
+    printf("Done\n");
     return oList;
 
 }
@@ -244,5 +246,7 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
     free(score);
     free(indices);
     free(improvement);
+    freeList(curr);
+    freeList(unmoved);
 
 }

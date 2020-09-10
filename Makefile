@@ -1,7 +1,8 @@
 FLAGS = -ansi -Wall -Wextra -Werror -pedantic-errors
 LIBS = -lm
 
-all: MatrixAndVectorOps.o input.o cluster
+all: cluster
+	
 linuxClean:
 	rm -rf *.o
 	rm cluster
