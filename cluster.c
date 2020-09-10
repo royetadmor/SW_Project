@@ -45,11 +45,16 @@ int main(int argc, char* argv[])
     if (code == 1){
     	return 1;
     }
+    cpu_time_used = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+    printf("getInputMatrix : %f seconds\n",cpu_time_used);
+
+
     code = Algorithem3(&oList, matrix,length,degreesSum,degreesArray);
+
 
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("The program took %f seconds\n",cpu_time_used);
+    printf("54 : The program took %f seconds\n",cpu_time_used);
     outFile = fopen(outFilePath, "wb");
     for (i = 0; i < length; ++i) {
         if(oList[i] != NULL)
