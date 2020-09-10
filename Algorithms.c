@@ -136,6 +136,8 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
     freeList(index_list);
     freeList(group1);
     freeList(group2);
+    freeDoubleMatrix(modMatrix,length);
+    freeIntMatrix(input_matrix,length);
     /* printf("Done\n"); */
     *oListToReturn = oList;
     return 0;
@@ -234,7 +236,7 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
         } else{
             delta_q = improvement[i_tag];
         }
-        /* printf("Improvement delta: %f\n",delta_q); */
+        printf("Improvement delta: %f\n",delta_q);
     }
     free(res);
     free(score);
