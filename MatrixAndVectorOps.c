@@ -115,4 +115,21 @@ void printIntVector(int length, int *vector){
     printf("\n");
 }
 
+void freeDoubleMatrix(double** matrix, int length)
+{
+    int i;
+    for (i = 0; i < length; ++i) {
+        free(matrix[i]);
+    }
+}
+void freeIntMatrix(int** matrix, int length)
+{
+    int i;
+    for (i = 0; i < length; ++i) {
+        free(matrix[i]);
+    }
+}
+
+
+
 
