@@ -58,7 +58,7 @@ int getBTagMatrix(double ***BTagMatrix, int length, double **modMatrix, list *in
     		nodeSum += tmpVal;
     		columnsPointer = columnsPointer->next;
     	}
-    	printf("%d", length);
+    	/* printf("%d", length); */
     	nodeSum = 0;
     	for(j = 0; j < length; j++ ){
     		nodeSum += modMatrix[i][j];

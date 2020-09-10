@@ -15,8 +15,12 @@
 
 int main(int argc, char* argv[])
 {
+
+	/*-----------------------------------declarations-----------------------------------*/
+
     char *inFilePath, *outFilePath;
     FILE* outFile;
+    int code; /* this integer allows us to catch errors (0 - success, 1- error) */
     int length, degreesSum, i, amountOfGroups, groupSize;
     int* degreesArray;
     int** matrix;
@@ -26,16 +30,27 @@ int main(int argc, char* argv[])
     double cpu_time_used;
     start = clock();
     amountOfGroups = 0;
-    printf("Because gcc is annoying: %d\n",argc);
-    inFilePath = argv[1];
+
+
+	/*-----------------------------------code-----------------------------------*/
+
+	if (argc != 3){
+		printf("ERROR - not enough values to main.");
+		return 1;
+	}
+	inFilePath = argv[1];
     outFilePath = argv[2];
-    /* inFilePath = "/Users/user/CLionProjects/SW_Project/graph.in"; */
-    getInputMatrix(inFilePath,&length,&degreesSum,&degreesArray,&matrix);
-    oList = Algorithem3(matrix,length,degreesSum,degreesArray);
+
+    code = getInputMatrix(inFilePath,&length,&degreesSum,&degreesArray,&matrix);
+    if (code == 1){
+    	return 1;
+    }
+    code = Algorithem3(&oList, matrix,length,degreesSum,degreesArray);
+
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("The program took %f seconds\n",cpu_time_used);
-    outFile = fopen(outFilePath,"wb");
+    outFile = fopen(outFilePath, "wb");
     for (i = 0; i < length; ++i) {
         if(oList[i] != NULL)
         {

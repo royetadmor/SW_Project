@@ -10,11 +10,6 @@
 
 
 
-#ifdef DEBUG
-# define DEBUG_PRINT(x) printf x
-#else
-# define DEBUG_PRINT(x) do {} while (0)
-#endif
 
 
 /**
@@ -44,25 +39,23 @@ int getInputMatrix(char* binaryInput, int *lengthPointer, int* degreesSum, int**
 	if(degreesSum == 0){};
 	if(degreesArray == 0){};
 
-	DEBUG_PRINT(("Validating input file... \n"));
+	/* "Validating input file. */
 
 	assert(binaryInput != 0);
 	assert(binaryInput != NULL);
 	file = fopen(binaryInput, "r");
 	assert(file!=NULL);
 
-	DEBUG_PRINT(("The input is valid.\n"));
+	/* "The input is valid. */
 
 
 	/*-----------------------------------*/
 
 
-	DEBUG_PRINT(("Start - Creating the matrix... \n"));
+	/* "Start - Creating the matrix... \n" */
 
 	ass = fread(&numOfNodes, sizeof(int), 1, file);
 	assert(ass == 1);
-
-	DEBUG_PRINT(("numOfNodes: %d\n", numOfNodes));
 
 	matrix = (int**)calloc(numOfNodes, sizeof(int*));
 
@@ -83,46 +76,28 @@ int getInputMatrix(char* binaryInput, int *lengthPointer, int* degreesSum, int**
 
 		ass = fread(&nodeDegree, sizeof(int), 1, file);
 		assert(ass == 1);
-		DEBUG_PRINT(("%d_th node : degree is %d.\n it's neighbors are: ", i, nodeDegree));
 		myDegreesSum += nodeDegree;
 		myDegreesArray[i] = nodeDegree;
 
 		for (q = 0; q < nodeDegree; q++){
 			ass = fread(&neighborIndex, sizeof(int), 1, file);
 			assert(ass == 1);
-			DEBUG_PRINT(("%d ", neighborIndex));
 			matrix[i][neighborIndex] = 1;
 		}
-
-		DEBUG_PRINT((" .\n"));
 
 	}
 
 	/*free(neighborNodes);*/
 
-	DEBUG_PRINT(("End - Creating the matrix. \n"));
+	/* "End - Creating the matrix. */
 
 
 	/*-----------------------------------*/
 
 	*matrixPointer = matrix;
-	/* printf("The matrix: \n");
-	for (i = 0 ; i < numOfNodes ; i ++){
-		for(j = 0 ; j < numOfNodes; j++){
-			printf("%d ",*(*(matrix + i)+j) );
-		}
-		printf("\n");
-	} */
-	printf("The degrees array: \n");
 	*degreesArray = myDegreesArray;
-	for (i = 0 ; i < numOfNodes ; i ++){
-		printf("%d ", myDegreesArray[i]);
-	}
-	printf("\n");
 	*lengthPointer = numOfNodes;
-	printf("lengthPointerValue: %d\n", *lengthPointer);
 	*degreesSum = myDegreesSum;
-	printf("myDegreesSumValue: %d\n", myDegreesSum);
 	return EXIT_SUCCESS;
 
 }
