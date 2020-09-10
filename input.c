@@ -106,13 +106,13 @@ int getInputMatrix(char* binaryInput, int *lengthPointer, int* degreesSum, int**
 	/*-----------------------------------*/
 
 	*matrixPointer = matrix;
-	printf("The matrix: \n");
+	/* printf("The matrix: \n");
 	for (i = 0 ; i < numOfNodes ; i ++){
 		for(j = 0 ; j < numOfNodes; j++){
 			printf("%d ",*(*(matrix + i)+j) );
 		}
 		printf("\n");
-	}
+	} */
 	printf("The degrees array: \n");
 	*degreesArray = myDegreesArray;
 	for (i = 0 ; i < numOfNodes ; i ++){
