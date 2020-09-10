@@ -11,23 +11,36 @@
 #include "math.h"
 #include "float.h"
 #include "modularity.h"
+#include <time.h>
 #define IS_POSITIVE(x) ((x) > 0.00001)
 
 
 void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* group1, list* group2)
 {
+	clock_t start;
     double* init_vector;
     double eigenvalue;
     double* s_vector;
     double* res_vector;
     double res;
     int i,j;
+    double iter_time;
     list* curr;
+
+    start = clock();
     curr = index_list;
     s_vector = (double*)malloc(length* sizeof(double));
     res_vector = (double*)malloc(length* sizeof(double));
     init_vector = generateRandomVector(length);
+    iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+    printf("init_vector : %f seconds\n", iter_time);
+
+    start = clock();
     eigenvalue = CalculateLeadingEigenpair(modularity_matrix,init_vector,length);
+    iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+    printf("eigenvalue : %f seconds\n", iter_time);
+
+
     if(!IS_POSITIVE(eigenvalue))
     {
         return;
@@ -43,9 +56,18 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
             s_vector[i] = -1;
         }
     }
-    Algorithem4(s_vector,modularity_matrix,length);
+    /*Algorithem4(s_vector,modularity_matrix,length);*/
+    start = clock();
     multiplyMatrixAndVector(modularity_matrix,s_vector,res_vector,length);
+    iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+    printf("multiplyMatrixAndVector : %f seconds\n", iter_time);
+
+
+    start = clock();
     res = MultiplyVectorAndVector(res_vector,s_vector,length);
+    iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+    printf("MultiplyVectorAndVector : %f seconds\n", iter_time);
+
     if(!IS_POSITIVE(res))
     {
         return;
@@ -68,6 +90,7 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
 
 int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degreesSum, int*degreesArray)
 {
+	clock_t start;
     int i, pIndex, oIndex; /* j, */
     list* index_list;
     list** pList;
@@ -76,8 +99,11 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
     list* group2;
     double** modMatrix;
     double **BTagMatrix;
+    double iter_time;
     pIndex = 0;
     oIndex = 0;
+
+
     pList = (list**)malloc(length* sizeof(list*));
     oList = (list**)malloc(length* sizeof(list*));
     index_list = init_list();
@@ -88,11 +114,20 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
     ++pIndex;
     while (pIndex != 0)
     {
+        start = clock();
         group1 = init_list();
         group2 = init_list();
+        iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+        printf("init_list : %f seconds\n", iter_time);
         getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
+        iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+        printf("getModularityMatrix : %f seconds\n", iter_time);
         getBTagMatrix(&BTagMatrix, length, modMatrix,pList[pIndex - 1]);
+        iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+        printf("getBTagMatrix : %f seconds\n", iter_time);
         Algorithem1(BTagMatrix,ListSize(pList[pIndex - 1]),pList[pIndex - 1],group1,group2);
+        iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+        printf("Algorithem1 : %f seconds\n", iter_time);
         if(ListSize(group1) == 0 || ListSize(group2) == 0)
         {
             oList[oIndex] = pList[pIndex - 1];
@@ -132,6 +167,8 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
         for (j = 0; j < oIndex; ++j) {
             printList(oList[j]);
         } */
+        iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+        printf("pIndex != 0 Iteration : %f seconds\n", iter_time);
     }
     freeList(index_list);
     freeList(group1);
