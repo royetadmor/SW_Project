@@ -63,12 +63,12 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
     }
     free(s_vector);
     free(res_vector);
-
 }
 
-list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArray)
+
+int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degreesSum, int*degreesArray)
 {
-    int i,j, pIndex, oIndex;
+    int i, pIndex, oIndex; /* j, */
     list* index_list;
     list** pList;
     list** oList;
@@ -92,7 +92,6 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
         group2 = init_list();
         getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
         getBTagMatrix(&BTagMatrix, length, modMatrix,pList[pIndex - 1]);
-        printf("\n");
         Algorithem1(BTagMatrix,ListSize(pList[pIndex - 1]),pList[pIndex - 1],group1,group2);
         if(ListSize(group1) == 0 || ListSize(group2) == 0)
         {
@@ -125,22 +124,26 @@ list** Algorithem3(int** input_matrix,int length,int degreesSum, int*degreesArra
             }
 
         }
-        printf("pList:\n");
+        /* printf("pList:\n");
         for (j = 0; j < pIndex; ++j) {
             printList(pList[j]);
         }
         printf("oList:\n");
         for (j = 0; j < oIndex; ++j) {
             printList(oList[j]);
-        }
+        } */
     }
     freeList(index_list);
     freeList(group1);
     freeList(group2);
-    printf("Done\n");
-    return oList;
+    /* printf("Done\n"); */
+    *oListToReturn = oList;
+    return 0;
 
 }
+
+
+
 void Algorithem4(double* s_vector, double** modularity_matrix, int length)
 {
     /* Declarations */
@@ -231,7 +234,7 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
         } else{
             delta_q = improvement[i_tag];
         }
-        printf("Improvement delta: %f\n",delta_q);
+        /* printf("Improvement delta: %f\n",delta_q); */
     }
     free(res);
     free(score);
