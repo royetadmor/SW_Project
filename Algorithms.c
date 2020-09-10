@@ -154,7 +154,7 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
 void Algorithem4(double* s_vector, double** modularity_matrix, int length)
 {
     /* Declarations */
-    double delta_q,tmp,q;
+    double delta_q,tmp;
     int i,j,k, tmp_int;
     double* res;
     double* score;
@@ -188,14 +188,9 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
 
             /* Calculating score for each vertex and finding maximum score's index */
             multiplyMatrixAndVector(modularity_matrix,s_vector,res,length);
-            q = MultiplyVectorAndVector(s_vector,res,length);
             while (curr)
             {
-                s_vector[curr->val] = (-1)*s_vector[curr->val];
-                multiplyMatrixAndVector(modularity_matrix,s_vector,res,length);
-                tmp = MultiplyVectorAndVector(s_vector,res,length);
-                score[curr->val] = tmp - q;
-                s_vector[curr->val] = (-1)*s_vector[curr->val];
+                score[curr->val] = -4*s_vector[curr->val] * res[curr->val] + 4*modularity_matrix[curr->val][curr->val];
                 curr = curr->next;
             }
             curr = unmoved;
