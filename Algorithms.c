@@ -56,7 +56,7 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
             s_vector[i] = -1;
         }
     }
-    /*Algorithem4(s_vector,modularity_matrix,length);*/
+    Algorithem4(s_vector,modularity_matrix,length);
     start = clock();
     multiplyMatrixAndVector(modularity_matrix,s_vector,res_vector,length);
     iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
