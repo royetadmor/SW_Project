@@ -56,17 +56,18 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
             s_vector[i] = -1;
         }
     }
+    start = clock();
     Algorithem4(s_vector,modularity_matrix,length);
+    iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+    printf("Algorithem4 : %f seconds\n", iter_time);
     start = clock();
     multiplyMatrixAndVector(modularity_matrix,s_vector,res_vector,length);
     iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
-    printf("multiplyMatrixAndVector : %f seconds\n", iter_time);
 
 
     start = clock();
     res = MultiplyVectorAndVector(res_vector,s_vector,length);
     iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
-    printf("MultiplyVectorAndVector : %f seconds\n", iter_time);
 
     if(!IS_POSITIVE(res))
     {
@@ -85,19 +86,20 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
     }
     free(s_vector);
     free(res_vector);
+    free(init_vector);
 }
 
 
 int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degreesSum, int*degreesArray)
 {
 	clock_t start;
-    int i, pIndex, oIndex; /* j, */
+    int i, pIndex, oIndex, list_size;
     list* index_list;
     list** pList;
     list** oList;
     list* group1;
     list* group2;
-    double** modMatrix;
+    double **modMatrix;
     double **BTagMatrix;
     double iter_time;
     pIndex = 0;
@@ -112,20 +114,15 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
     }
     pList[pIndex] = index_list;
     ++pIndex;
+    getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
     while (pIndex != 0)
     {
-        start = clock();
         group1 = init_list();
         group2 = init_list();
-        iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
-        printf("init_list : %f seconds\n", iter_time);
-        getModularityMatrix(&modMatrix,length,degreesSum,degreesArray,input_matrix);
-        iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
-        printf("getModularityMatrix : %f seconds\n", iter_time);
+        list_size = ListSize(pList[pIndex - 1]);
         getBTagMatrix(&BTagMatrix, length, modMatrix,pList[pIndex - 1]);
-        iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
-        printf("getBTagMatrix : %f seconds\n", iter_time);
-        Algorithem1(BTagMatrix,ListSize(pList[pIndex - 1]),pList[pIndex - 1],group1,group2);
+        start = clock();
+        Algorithem1(BTagMatrix,list_size,pList[pIndex - 1],group1,group2);
         iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
         printf("Algorithem1 : %f seconds\n", iter_time);
         if(ListSize(group1) == 0 || ListSize(group2) == 0)
@@ -134,6 +131,8 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
             oIndex++;
             pList[pIndex - 1] = NULL;
             --pIndex;
+            freeList(group1);
+            freeList(group2);
         }
         else
         {
@@ -159,23 +158,18 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
             }
 
         }
-        /* printf("pList:\n");
-        for (j = 0; j < pIndex; ++j) {
-            printList(pList[j]);
-        }
-        printf("oList:\n");
-        for (j = 0; j < oIndex; ++j) {
-            printList(oList[j]);
-        } */
         iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
         printf("pIndex != 0 Iteration : %f seconds\n", iter_time);
+        freeDoubleMatrix(BTagMatrix,list_size);
+
     }
+    for (i = 0; i< length; ++i) {
+            freeList(pList[i]);
+    }
+    free(pList);
     freeList(index_list);
-    freeList(group1);
-    freeList(group2);
+
     freeDoubleMatrix(modMatrix,length);
-    freeIntMatrix(input_matrix,length);
-    /* printf("Done\n"); */
     *oListToReturn = oList;
     return 0;
 
@@ -187,13 +181,15 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
 {
     /* Declarations */
     double delta_q,tmp;
-    int i,j,k, tmp_int;
+    int i,j,k,l, tmp_int;
     double* res;
     double* score;
     int* indices;
     double* improvement;
     int i_tag;
     int j_tag;
+    double iter_time;
+    clock_t start;
     list* unmoved;
     list* curr;
     delta_q = 1.0;
@@ -216,17 +212,33 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
         curr = unmoved;
 
         /* Looking for improvement for the partition */
+        multiplyMatrixAndVector(modularity_matrix,s_vector,res,length);
+        printf("Starting first for\n");
+        j_tag = -1;
         for (i = 0; i < length; ++i) {
 
             /* Calculating score for each vertex and finding maximum score's index */
-            multiplyMatrixAndVector(modularity_matrix,s_vector,res,length);
+            start = clock();
+            /*multiplyMatrixAndVector(modularity_matrix,s_vector,res,length);*/
+            iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+            if (j_tag != -1)
+            {
+                for (l = 0; l < length; ++l) {
+                    res[l] = res[l] + (s_vector[j_tag]*2*modularity_matrix[l][j_tag]);
+                }
+            }
+            /* printf("multiplyMatrixAndVector - Algo 4 : %f seconds\n", iter_time); */
+            start = clock();
             while (curr)
             {
                 score[curr->val] = -4*s_vector[curr->val] * res[curr->val] + 4*modularity_matrix[curr->val][curr->val];
                 curr = curr->next;
             }
+            iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+            /*printf("Score calc - Algo 4 : %f seconds\n", iter_time);*/
             curr = unmoved;
             tmp = -DBL_MAX;
+            start = clock();
             while (curr)
             {
                 if(score[curr->val] > tmp)
@@ -236,6 +248,8 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
                 }
                 curr = curr->next;
             }
+            iter_time = ((double) (clock() - start)) / CLOCKS_PER_SEC;
+            /*printf("Finding max - Algo 4 : %f seconds\n", iter_time);*/
 
             /* moving vertex j_tag and calculating improvement */
             s_vector[j_tag] = (-1)*s_vector[j_tag];
@@ -252,7 +266,6 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
             unmoved = removeNode(j_tag,unmoved);
             curr = unmoved;
         }
-
         /* Calculating best improvement for s and update accordingly */
         tmp = -DBL_MAX;
         for (j = 0; j < length; ++j) {
@@ -274,12 +287,13 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
             delta_q = improvement[i_tag];
         }
         printf("Improvement delta: %f\n",delta_q);
+        freeList(unmoved);
+        freeList(curr);
     }
     free(res);
     free(score);
     free(indices);
     free(improvement);
-    freeList(curr);
-    freeList(unmoved);
+    printf("bla %f",iter_time);
 
 }

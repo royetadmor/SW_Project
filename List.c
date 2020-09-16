@@ -27,13 +27,16 @@ list* removeNode(int val, list* head)
     if (curr->val == val)
     {
         head = head->next;
+        free(tmp);
         return head;
     }
     while (curr)
     {
         if(curr->next != NULL && curr->next->val == val)
         {
+            tmp = curr->next;
             curr->next = curr->next->next;
+            free(tmp);
             return head;
         } else
         {

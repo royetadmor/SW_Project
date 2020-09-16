@@ -121,6 +121,7 @@ void freeDoubleMatrix(double** matrix, int length)
     for (i = 0; i < length; ++i) {
         free(matrix[i]);
     }
+    free(matrix);
 }
 void freeIntMatrix(int** matrix, int length)
 {
@@ -128,6 +129,7 @@ void freeIntMatrix(int** matrix, int length)
     for (i = 0; i < length; ++i) {
         free(matrix[i]);
     }
+    free(matrix);
 }
 
 

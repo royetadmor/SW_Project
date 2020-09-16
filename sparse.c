@@ -30,20 +30,20 @@ double* PowerIterationsWithSparse(double** matrix, double * init_vector, int siz
         A->add_row(A,matrix[i],i);
     }
      */
+
     new_vector = (double*)malloc(size*sizeof(double));
     /*printVector(size,init_vector);*/
     while(hasEpsilonDifference(init_vector,new_vector,size) == 0)
     {
         /*PowerIteration(A,init_vector,new_vector,size);*/
+        /*printf("%d\n",iter);*/
         iterate(matrix,init_vector,new_vector,size);
         iter += 2;
     }
     /* printf("Iter: %d\n",iter);
     printf("Normalized eigenvector is: \n");
     printVector(size,init_vector);*/
-    /*
-    A->free(A);
-     */
+    /*A->free(A);*/
     free(new_vector);
     return init_vector;
 }
