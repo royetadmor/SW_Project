@@ -71,6 +71,12 @@ int main(int argc, char* argv[])
             curr = curr->next;
         }
     }
+    free(degreesArray);
+    freeIntMatrix(matrix,length);
+    for (i = 0; i < length; ++i) {
+        freeList(oList[i]);
+    }
+    free(oList);
 
 
 
