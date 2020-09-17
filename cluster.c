@@ -1,8 +1,3 @@
-/*
- * Created by Roye on 18/08/2020.
- */
-
-
 #include <stdlib.h>
 #include <stdio.h>
 #include "input.h"

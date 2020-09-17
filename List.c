@@ -4,13 +4,14 @@
 #include <math.h>
 #include <limits.h>
 
-void add(int val, list* head)
+
+int add(int val, list* head)
 {
     list* curr = head;
     if(curr != NULL && curr->val == INT_MIN)
     {
         curr->val = val;
-        return;
+    	return EXIT_SUCCESS;
     }
     while (curr->next)
     {
@@ -19,7 +20,10 @@ void add(int val, list* head)
     curr->next = (list*)malloc(sizeof(list));
     curr->next->val = val;
     curr->next->next = NULL;
+	return EXIT_SUCCESS;
 }
+
+
 list* removeNode(int val, list* head)
 {
     list* curr = head;
@@ -45,6 +49,8 @@ list* removeNode(int val, list* head)
     }
     return tmp;
 }
+
+
 list* getNode(int val, list* head)
 {
     list* curr = head;
@@ -60,6 +66,8 @@ list* getNode(int val, list* head)
     }
     return NULL;
 }
+
+
 int ListSize(list* head)
 {
     int count;
@@ -76,6 +84,8 @@ int ListSize(list* head)
     }
     return count;
 }
+
+
 list* init_list()
 {
     list* head;
@@ -84,6 +94,8 @@ list* init_list()
     head->val = INT_MIN;
     return head;
 }
+
+
 void printList(list* head)
 {
     list* curr;
@@ -95,6 +107,8 @@ void printList(list* head)
     }
     printf("NULL\n");
 }
+
+
 int createArrayFromList(list *head, int *array){
 
 	int i, length, value;
@@ -112,6 +126,7 @@ int createArrayFromList(list *head, int *array){
 	}
 	return EXIT_SUCCESS;
 }
+
 
 void freeList(list* head)
 {

@@ -1,7 +1,3 @@
-/*
- * Created by Roye on 18/08/2020.
- */
-
 #include "MathHelpers.h"
 #include "MatrixAndVectorOps.h"
 #include <stdlib.h>
@@ -25,6 +21,7 @@ double CalculateEigenvalue(double** matrix, double* vector, int length)
     return (upper/lower);
 
 }
+
 
 double CalculateLeadingEigenpair(double** matrix,double* init_vector, int length)
 {
@@ -60,10 +57,13 @@ double Calculate1norm(double** matrix,int length)
     free(arr);
     return max;
 }
-void CalculateNewMatrix(double** matrix, double norm ,int length)
+
+
+int CalculateNewMatrix(double** matrix, double norm ,int length)
 {
     int i;
     for (i = 0; i < length; ++i) {
         matrix[i][i] += norm;
     }
+	return EXIT_SUCCESS;
 }

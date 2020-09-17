@@ -1,9 +1,3 @@
-/*
- * modularity.h
- *
- *  Created on: 18 Aug 2020
- *      Author: hadar
- */
 #include "List.h"
 
 

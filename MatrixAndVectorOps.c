@@ -1,7 +1,3 @@
-/*
-* Created by Roye on 18/08/2020.
-*/
-
 #include "MatrixAndVectorOps.h"
 #include <math.h>
 #include <stdio.h>
@@ -123,6 +119,7 @@ void freeDoubleMatrix(double** matrix, int length)
     }
     free(matrix);
 }
+
 void freeIntMatrix(int** matrix, int length)
 {
     int i;

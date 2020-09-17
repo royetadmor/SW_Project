@@ -1,13 +1,6 @@
-/*
- * input.c
- *
- *  Created on: 12 Aug 2020
- *      Author: hadar
- */
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
-
 
 
 

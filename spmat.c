@@ -1,7 +1,3 @@
-/*
- * Created by Roye on 06/08/2020.
- */
-
 #include "spmat.h"
 #include <stdio.h>
 #include <stdlib.h>

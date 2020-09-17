@@ -1,7 +1,3 @@
-/*
-* Created by Roye on 18/08/2020.
-*/
-
 #include "Algorithms.h"
 #include "MatrixAndVectorOps.h"
 #include <stdlib.h>
@@ -15,7 +11,7 @@
 #define IS_POSITIVE(x) ((x) > 0.00001)
 
 
-void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* group1, list* group2)
+int Algorithem1(double** modularity_matrix,int length,list* index_list ,list* group1, list* group2)
 {
 	clock_t start;
     double* init_vector;
@@ -43,7 +39,7 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
 
     if(!IS_POSITIVE(eigenvalue))
     {
-        return;
+        return 0;
     }
     for (i = 0; i < length; ++i)
     {
@@ -71,7 +67,7 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
 
     if(!IS_POSITIVE(res))
     {
-        return;
+        return 0;
     }
     for (j = 0; j < length; ++j) {
         if(IS_POSITIVE(s_vector[j]))
@@ -87,6 +83,7 @@ void Algorithem1(double** modularity_matrix,int length,list* index_list ,list* g
     free(s_vector);
     free(res_vector);
     free(init_vector);
+    return 0;
 }
 
 
@@ -177,7 +174,7 @@ int Algorithem3(list*** oListToReturn ,int** input_matrix,int length,int degrees
 
 
 
-void Algorithem4(double* s_vector, double** modularity_matrix, int length)
+int Algorithem4(double* s_vector, double** modularity_matrix, int length)
 {
     /* Declarations */
     double delta_q,tmp;
@@ -294,6 +291,7 @@ void Algorithem4(double* s_vector, double** modularity_matrix, int length)
     free(score);
     free(indices);
     free(improvement);
-    printf("bla %f",iter_time);
+    printf("%f",iter_time);
+    return 0;
 
 }

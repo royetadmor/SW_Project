@@ -1,7 +1,3 @@
-/*
- * Created by Roye on 18/08/2020.
- */
-
 #ifndef SW_PROJECT_MATHHELPERS_H
 #define SW_PROJECT_MATHHELPERS_H
 
@@ -25,7 +21,7 @@ double Calculate1norm(double** matrix,int length);
 /*
  * Calculates the matrix after adding the 1-norm (C' = ||C_1||*I + C)
  */
-void CalculateNewMatrix(double** matrix, double norm ,int length);
+int CalculateNewMatrix(double** matrix, double norm ,int length);
 
 /*
  * Calculates the leading eigenpair using sparse impl.

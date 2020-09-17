@@ -1,7 +1,3 @@
-/*
- * Created by Roye on 12/08/2020.
- */
-
 #ifndef SW_PROJECT_SPARSE_H
 #define SW_PROJECT_SPARSE_H
 

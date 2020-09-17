@@ -1,7 +1,3 @@
-/*
-* Created by Roye on 18/08/2020.
-*/
-
 #ifndef SW_PROJECT_MATRIXANDVECTOROPS_H
 #define SW_PROJECT_MATRIXANDVECTOROPS_H
 

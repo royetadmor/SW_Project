@@ -1,10 +1,3 @@
-/*
- * modularity.c
- *
- *  Created on: 18 Aug 2020
- *      Author: hadar
- */
-
 /* include system packages */
 #include <stdio.h>
 #include <assert.h>
